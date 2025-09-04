@@ -1,6 +1,6 @@
 // utils/handleFileUpload.js
-export const handleFileUpload = async (e, setter, prevState) => {
-  if (!e.target.files || !e.target.files[0]) return;
+export const handleFileUpload = async (e) => {
+  if (!e.target.files || !e.target.files[0]) return null;
 
   const selectedFile = e.target.files[0];
   const formData = new FormData();
@@ -15,10 +15,9 @@ export const handleFileUpload = async (e, setter, prevState) => {
     if (!res.ok) throw new Error("Upload gagal");
 
     const data = await res.json();
-
-    // Update state sesuai entity (product/news/team)
-    setter({ ...prevState, image: data.url });
+    return data.url; // ✅ balikin URL aja
   } catch (err) {
     console.error("Upload gagal:", err);
+    return null;
   }
 };

@@ -6,7 +6,7 @@ import { useParams, useRouter } from "next/navigation";
 export default function EditTeamPage() {
   const { id } = useParams();
   const router = useRouter();
-
+  const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [file, setFile] = useState(null);
@@ -17,7 +17,7 @@ export default function EditTeamPage() {
   // fetch data team by id
   useEffect(() => {
     if (!id) return;
-    fetch(`http://localhost:5000/api/teams/id/${id}`)
+    fetch(`${API_BASE}/api/teams/id/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setName(data.name || "");
@@ -25,7 +25,7 @@ export default function EditTeamPage() {
         setPosition(data.position || "");
         setKategori(data.kategori || "dewan");
       });
-  }, [id]);
+  }, [id, API_BASE]);
 
   // ✅ fungsi upload ada di scope komponen
   const handleFileUpload = async (e) => {
