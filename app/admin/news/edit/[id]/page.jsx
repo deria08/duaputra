@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
+import { handleFileUpload } from "@/utils/HandleFileUpload";
 
 export default function EditNewsPage() {
   const router = useRouter();
@@ -13,7 +14,7 @@ export default function EditNewsPage() {
     fullDesc: { id: "", en: "" },
     date: "",
   });
-  const [uploading, setUploading] = useState(false);
+  // const [uploading, setUploading] = useState(false);
 
 useEffect(() => {
   if (!id) return;
@@ -57,25 +58,25 @@ useEffect(() => {
     });
     router.push("/admin/news");
   };
-const handleFileUpload = async (e) => {
-  if (!e.target.files?.[0]) return;
-  const formData = new FormData();
-  formData.append("file", e.target.files[0]);
-  setUploading(true);
+// const handleFileUpload = async (e) => {
+//   if (!e.target.files?.[0]) return;
+//   const formData = new FormData();
+//   formData.append("file", e.target.files[0]);
+//   setUploading(true);
 
-  try {
-    const res = await fetch("http://localhost:5000/api/upload", {
-      method: "POST",
-      body: formData,
-    });
-    const data = await res.json();
-    setNews({ ...news, image: data.url });
-  } catch (err) {
-    console.error("Upload gagal:", err);
-  } finally {
-    setUploading(false);
-  }
-};
+//   try {
+//     const res = await fetch("http://localhost:5000/api/upload", {
+//       method: "POST",
+//       body: formData,
+//     });
+//     const data = await res.json();
+//     setNews({ ...news, image: data.url });
+//   } catch (err) {
+//     console.error("Upload gagal:", err);
+//   } finally {
+//     setUploading(false);
+//   }
+// };
 
   return (
     <div className="p-6 max-w-2xl mx-auto">
@@ -88,8 +89,12 @@ const handleFileUpload = async (e) => {
         {/* Gambar */}
         {/* <input className="w-full border p-2 rounded" value={news.image} onChange={(e) => setNews({ ...news, image: e.target.value })} placeholder="URL Gambar" /> */}
         <p>Masukkan Gambar</p>
-        <input type="file" accept="image/*" onChange={handleFileUpload} />
-        {uploading && <p>Mengunggah file...</p>}
+        <input
+        type="file"
+        accept="image/*"
+        onChange={(e) => handleFileUpload(e, setNews)}
+      />
+
         
         {/* Deskripsi Singkat */}
         <input className="w-full border p-2 rounded" value={news.shortDesc.id} onChange={(e) => setNews({ ...news, shortDesc: { ...news.shortDesc, id: e.target.value } })} placeholder="Deskripsi Singkat (ID)" />

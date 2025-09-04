@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { handleFileUpload } from "@/utils/HandleFileUpload";
 
 export default function AddProductPage() {
   const router = useRouter();
@@ -9,31 +10,10 @@ export default function AddProductPage() {
   const [name, setName] = useState({ id: "", en: "" });
   const [description, setDescription] = useState({ id: "", en: "" });
   const [image, setImage] = useState("");
-  const [file, setFile] = useState(null);
-  const [uploading, setUploading] = useState(false);
+  // const [file, setFile] = useState(null);
+  // const [uploading, setUploading] = useState(false);
   const [kategori,setKategori] = useState("ikan")
 
-  const handleFileUpload = async (e) => {
-    if (!e.target.files || !e.target.files[0]) return;
-    setFile(e.target.files[0]);
-
-    const formData = new FormData();
-    formData.append("file", e.target.files[0]);
-    setUploading(true);
-
-    try {
-      const res = await fetch("http://localhost:5000/api/upload", {
-        method: "POST",
-        body: formData,
-      });
-      const data = await res.json();
-      setImage(data.url);
-    } catch (err) {
-      console.error("Upload gagal:", err);
-    } finally {
-      setUploading(false);
-    }
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -80,8 +60,12 @@ export default function AddProductPage() {
         /> */}
         <p>Masukkan Gambar</p>
         {/* Upload File */}
-        <input type="file" accept="image/*" onChange={handleFileUpload} />
-        {uploading && <p>Mengunggah file...</p>}
+        <input
+        type="file"
+        accept="image/*"
+        onChange={(e) => handleFileUpload(e, setProduct)}
+      />
+
 
         {/* Deskripsi Bahasa Indonesia */}
         <textarea

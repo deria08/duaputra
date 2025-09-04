@@ -79,12 +79,13 @@ export default function EditTeamPage() {
         <input type="file" accept="image/*" onChange={handleFileUpload} />
         {uploading && <p>Mengunggah file...</p>}
         {image && (
-          <img
-            src={`http://localhost:5000${image}`}
-            alt="Preview"
-            className="w-40 mt-2 rounded"
-          />
-        )}
+        <img
+          src={image} // langsung pake URL dari server/Cloudinary
+          alt="Preview"
+          className="w-40 mt-2 rounded"
+        />
+      )}
+
 
         <input
           className="w-full border p-2 rounded"

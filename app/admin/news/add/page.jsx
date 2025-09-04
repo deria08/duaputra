@@ -2,40 +2,41 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { handleFileUpload } from "@/utils/HandleFileUpload";
 
 export default function AddNewsPage() {
   const router = useRouter();
 
   const [titleId, setTitleId] = useState("");
   const [titleEn, setTitleEn] = useState("");
-  const [image, setImage] = useState("");
-  const [file, setFile] = useState(null);
+  // const [image, setImage] = useState("");
+  // const [file, setFile] = useState(null);
   const [shortId, setShortId] = useState("");
   const [shortEn, setShortEn] = useState("");
   const [fullId, setFullId] = useState("");
   const [fullEn, setFullEn] = useState("");
   const [date, setDate] = useState("");
-  const [uploading, setUploading] = useState(false);
+  // const [uploading, setUploading] = useState(false);
 
-  const handleFileUpload = async (e) => {
-    if (!e.target.files?.[0]) return;
-    const formData = new FormData();
-    formData.append("file", e.target.files[0]);
-    setUploading(true);
+  // const handleFileUpload = async (e) => {
+  //   if (!e.target.files?.[0]) return;
+  //   const formData = new FormData();
+  //   formData.append("file", e.target.files[0]);
+  //   setUploading(true);
 
-    try {
-      const res = await fetch("http://localhost:5000/api/upload", {
-        method: "POST",
-        body: formData,
-      });
-      const data = await res.json();
-      setImage(data.url);
-    } catch (err) {
-      console.error("Upload gagal:", err);
-    } finally {
-      setUploading(false);
-    }
-  };
+  //   try {
+  //     const res = await fetch("http://localhost:5000/api/upload", {
+  //       method: "POST",
+  //       body: formData,
+  //     });
+  //     const data = await res.json();
+  //     setImage(data.url);
+  //   } catch (err) {
+  //     console.error("Upload gagal:", err);
+  //   } finally {
+  //     setUploading(false);
+  //   }
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -72,7 +73,12 @@ export default function AddNewsPage() {
         {/* Gambar */}
         {/* <input className="w-full border p-2 rounded" placeholder="URL Gambar" value={image} onChange={(e) => setImage(e.target.value)} /> */}
         <p>Masukkan Gambar</p>
-        <input type="file" accept="image/*" onChange={handleFileUpload} />
+        <input
+        type="file"
+        accept="image/*"
+        onChange={(e) => handleFileUpload(e, setNews)}
+      />
+
         {uploading && <p>Mengunggah file...</p>}
 
         {/* Deskripsi Singkat */}

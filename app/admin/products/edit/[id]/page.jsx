@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
+import { handleFileUpload } from "@/utils/HandleFileUpload";
 
 export default function EditProductPage() {
   const router = useRouter();
@@ -30,29 +31,29 @@ export default function EditProductPage() {
     fetchProduct();
   }, [id]);
 
-  const handleFileUpload = async (e) => {
-    if (!e.target.files || !e.target.files[0]) return;
+  // const handleFileUpload = async (e) => {
+  //   if (!e.target.files || !e.target.files[0]) return;
 
-    const selectedFile = e.target.files[0];
-    setFile(selectedFile);
+  //   const selectedFile = e.target.files[0];
+  //   setFile(selectedFile);
 
-    const formData = new FormData();
-    formData.append("file", selectedFile);
+  //   const formData = new FormData();
+  //   formData.append("file", selectedFile);
 
-    setUploading(true);
-    try {
-      const res = await fetch("http://localhost:5000/api/upload", {
-        method: "POST",
-        body: formData,
-      });
-      const data = await res.json();
-      setProduct({ ...product, image: data.url });
-    } catch (err) {
-      console.error("Upload gagal:", err);
-    } finally {
-      setUploading(false);
-    }
-  };
+  //   setUploading(true);
+  //   try {
+  //     const res = await fetch("http://localhost:5000/api/upload", {
+  //       method: "POST",
+  //       body: formData,
+  //     });
+  //     const data = await res.json();
+  //     setProduct({ ...product, image: data.url });
+  //   } catch (err) {
+  //     console.error("Upload gagal:", err);
+  //   } finally {
+  //     setUploading(false);
+  //   }
+  // };
 
   const handleUpdate = async (e) => {
     e.preventDefault();
@@ -97,8 +98,12 @@ export default function EditProductPage() {
         /> */}
         <p>Masukkan Gambar</p>
         {/* Upload File */}
-        <input type="file" accept="image/*" onChange={handleFileUpload} />
-        {uploading && <p>Mengunggah file...</p>}
+        <input
+        type="file"
+        accept="image/*"
+        onChange={(e) => handleFileUpload(e, setProduct)}
+      />
+
 
         {/* Deskripsi ID */}
         <textarea

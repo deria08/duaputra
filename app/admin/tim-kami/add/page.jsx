@@ -2,38 +2,24 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { handleFileUpload } from "@/utils/HandleFileUpload"; // ✅ import helper upload
 
 export default function AddTeamPage() {
   const router = useRouter();
 
   const [name, setName] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(""); // ✅ tambahin lagi
   const [position, setPosition] = useState("");
-  const [file, setFile] = useState(null);
   const [kategori, setKategori] = useState("dewan");
-  const [uploading, setUploading] = useState(false);
-  const handleFileUpload = async (e) => {
-        if (!e.target.files || !e.target.files[0]) return;
-        setFile(e.target.files[0]);
+  const [uploading, setUploading] = useState(false); // ✅ biar ada indikator
 
-        const formData = new FormData();
-        formData.append("file", e.target.files[0]);
-        setUploading(true);
+  const onFileChange = async (e) => {
+    setUploading(true);
+    const url = await handleFileUpload(e); // ✅ panggil util
+    if (url) setImage(url); // ✅ simpan URL Cloudinary ke state
+    setUploading(false);
+  };
 
-        try {
-        const res = await fetch("http://localhost:5000/api/upload", {
-            method: "POST",
-            body: formData, // jangan set Content-Type
-        });
-
-        const data = await res.json();
-        setImage(data.url); // simpan URL ke state image
-        } catch (err) {
-        console.error("Upload gagal:", err);
-        } finally {
-        setUploading(false);
-        }
-    };
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!name || !image || !position || !kategori) {
@@ -60,17 +46,13 @@ export default function AddTeamPage() {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <p>Masukkan Gambar</p>
-        {/* <input
-          className="w-full border p-2 rounded"
-          placeholder="URL Gambar"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-        /> */}
 
-        {/* Upload file */}
-        <input type="file" accept="image/*" onChange={handleFileUpload} />
-        {uploading && <p>Mengunggah file...</p>}
+        <p>Masukkan Gambar</p>
+        <input type="file" accept="image/*" onChange={onFileChange} />
+        {uploading && <p>Mengunggah gambar...</p>}
+        {image && (
+          <img src={image} alt="Preview" className="mt-2 w-32 rounded shadow" />
+        )}
 
         <input
           className="w-full border p-2 rounded"
@@ -79,7 +61,6 @@ export default function AddTeamPage() {
           onChange={(e) => setPosition(e.target.value)}
         />
 
-        {/* Dropdown kategori */}
         <select
           className="w-full border p-2 rounded"
           value={kategori}
