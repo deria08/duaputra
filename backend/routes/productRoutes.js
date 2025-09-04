@@ -10,7 +10,7 @@ import Product from "../models/Product.js";
 
 const router = express.Router();
 
-router.get("/", getProducts);
+
 // Get team by kategori
 router.get("/kategori/:kategori", async (req, res) => {
   try {
