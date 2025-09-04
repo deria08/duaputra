@@ -142,7 +142,7 @@ export default function TentangKami() {
       {timDewan.map((orang, i) => (
         <div key={i} className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
           <Image 
-            src={`http://localhost:5000${orang.image}`} 
+            src={orang.image} 
             alt={orang.name} 
             width={250} 
             height={250} 
@@ -164,7 +164,7 @@ export default function TentangKami() {
             {timManager.map((orang, i) => (
               <div key={i} className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
                 <Image
-                  src={`http://localhost:5000${orang.image}`}
+                  src={orang.image}
                   alt={orang.name}
                   width={250}
                   height={250}
@@ -186,7 +186,7 @@ export default function TentangKami() {
             {otherTim.map((orang, i) => (
               <div key={i} className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
                 <Image 
-                  src={`http://localhost:5000${orang.image}`} 
+                  src={orang.image} 
                   alt={orang.name} 
                   width={250} 
                   height={250} 
@@ -206,7 +206,7 @@ export default function TentangKami() {
           <div className="max-w-5xl mx-auto px-6 text-center">
             <h2 className="text-2xl font-bold mb-8 text-gray-800">{timAsisten.position}</h2>
             <Image 
-              src={`http://localhost:5000${timAsisten.image}`} 
+              src={timAsisten.image}
               alt={timAsisten.name} 
               width={1200} 
               height={600} 

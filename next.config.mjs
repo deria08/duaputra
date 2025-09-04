@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   i18n: {
-    locales: ["id", "en"], // bahasa yang tersedia
-    defaultLocale: "id",   // bahasa default
+    locales: ["id", "en"],
+    defaultLocale: "id",
   },
   images: {
     remotePatterns: [
@@ -19,18 +19,22 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "storage.googleapis.com",
+        pathname: "**",
       },
       {
         protocol: "https",
         hostname: "ds393qgzrxwzn.cloudfront.net",
+        pathname: "**",
       },
       {
         protocol: "https",
         hostname: "bo.duaputra.co.id",
+        pathname: "**",
       },
       {
         protocol: "https",
         hostname: "via.placeholder.com",
+        pathname: "**",
       },
       {
         protocol: "http",
