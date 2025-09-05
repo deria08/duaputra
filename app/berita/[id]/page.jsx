@@ -20,7 +20,7 @@ const NewsDetail = () => {
     if (!id) return;
     setLoading(true);
 
-    fetch(`http://localhost:5000/api/news/${id}?lang=${lang}`)
+    fetch(`/api/news/${id}?lang=${lang}`)
       .then((res) => res.json())
       .then((data) => {
         setNews(data);
@@ -34,7 +34,7 @@ const NewsDetail = () => {
 
   // Fetch berita lain
   useEffect(() => {
-    fetch(`http://localhost:5000/api/news?lang=${lang}`)
+    fetch(`/api/news?lang=${lang}`)
       .then((res) => res.json())
       .then((data) => {
         const others = data.filter((item) => item._id !== id);
@@ -73,7 +73,7 @@ const NewsDetail = () => {
             {/* Gambar Utama */}
             <div className="w-full mb-4 rounded-lg overflow-hidden">
             <Image
-              src={`http://localhost:5000${news.image}`}
+              src={news.image}
               alt={news.title}
               width={1200}      // besar, biar fleksibel
               height={800}
@@ -107,7 +107,7 @@ const NewsDetail = () => {
                   <div className="flex gap-3">
                     <div className="relative w-20 h-14 sm:w-24 sm:h-16 flex-shrink-0 rounded-md overflow-hidden">
                       <Image
-                        src={`http://localhost:5000${item.image}`}
+                        src={item.image}
                         alt={item.title}
                         fill
                         className="object-cover"

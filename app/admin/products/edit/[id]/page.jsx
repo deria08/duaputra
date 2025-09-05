@@ -30,38 +30,13 @@ export default function EditProductPage() {
     };
     fetchProduct();
   }, [id]);
-
-  // const handleFileUpload = async (e) => {
-  //   if (!e.target.files || !e.target.files[0]) return;
-
-  //   const selectedFile = e.target.files[0];
-  //   setFile(selectedFile);
-
-  //   const formData = new FormData();
-  //   formData.append("file", selectedFile);
-
-  //   setUploading(true);
-  //   try {
-  //     const res = await fetch("/api/upload", {
-  //       method: "POST",
-  //       body: formData,
-  //     });
-  //     const data = await res.json();
-  //     setProduct({ ...product, image: data.url });
-  //   } catch (err) {
-  //     console.error("Upload gagal:", err);
-  //   } finally {
-  //     setUploading(false);
-  //   }
-  // };
-
   const handleUpdate = async (e) => {
     e.preventDefault();
     await fetch(`/api/products/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(product),
-    });
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(product),
+    }); 
     router.push("/admin/products");
   };
 
@@ -97,12 +72,16 @@ export default function EditProductPage() {
           placeholder="URL Gambar"
         /> */}
         <p>Masukkan Gambar</p>
-        {/* Upload File */}
         <input
-        type="file"
-        accept="image/*"
-        onChange={(e) => handleFileUpload(e, setProduct)}
-      />
+          type="file"
+          accept="image/*"
+          onChange={async (e) => {
+            const url = await handleFileUpload(e);   // ✅ ambil url dari utils
+            if (url) {
+              setProduct((prev) => ({ ...prev, image: url })); // ✅ update state produk
+            }
+          }}
+        />
 
 
         {/* Deskripsi ID */}

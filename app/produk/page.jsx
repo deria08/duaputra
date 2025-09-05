@@ -15,19 +15,19 @@ export default function ProductPage() {
   const [cephalopoda, setCephalopoda] = useState([]);
 
   useEffect(() => {
-  fetch("/api/products/ikan")
+  fetch("/api/products/kategori/ikan")
     .then(res => res.json())
     .then(data => setIkan(data));
 
-  fetch("/api/products/udang")
+  fetch("/api/products/kategori/udang")
     .then(res => res.json())
     .then(data => setUdang(data));
 
-  fetch("/api/products/valueadded")
+  fetch("/api/products/kategori/valueadded")
     .then(res => res.json())
     .then(data => setValueAdded(data));
 
-  fetch("/api/products/cephalopoda")
+  fetch("/api/products/kategori/cephalopoda")
     .then(res => res.json())
     .then(data => setCephalopoda(data));
 }, [lang]);
@@ -49,7 +49,7 @@ export default function ProductPage() {
           {items.map((item) => (
             <a
               key={item._id}
-              href={`/detail-produk/${item._id}`}
+              // href={`/detail-produk/${item._id}`}
               className="group relative block rounded-xl overflow-hidden shadow-md hover:shadow-lg transition"
             >
               {/* Gambar */}

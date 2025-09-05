@@ -2,21 +2,21 @@ import { NextResponse } from "next/server";
 import connectDB from "@/backend/config/db";
 import Team from "@/backend/models/Team";
 
-// GET team by ID
+// GET teams by ID
 export async function GET(req, { params }) {
   try {
     await connectDB();
-    const team = await Team.findById(params.id);
-    if (!team) {
+    const teams = await Team.findById(params.id);
+    if (!teams) {
       return NextResponse.json({ error: "Team not found" }, { status: 404 });
     }
-    return NextResponse.json(team);
+    return NextResponse.json(teams);
   } catch (err) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }
 
-// UPDATE team by ID
+// UPDATE teams by ID
 export async function PUT(req, { params }) {
   try {
     await connectDB();
@@ -34,7 +34,7 @@ export async function PUT(req, { params }) {
   }
 }
 
-// DELETE team by ID
+// DELETE teams by ID
 export async function DELETE(req, { params }) {
   try {
     await connectDB();

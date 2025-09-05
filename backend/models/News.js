@@ -6,20 +6,19 @@ const newsSchema = new mongoose.Schema(
       id: { type: String, required: true },
       en: { type: String, required: true },
     },
-    image: { type: String, required: true },
+    image: String,
     shortDesc: {
-      id: { type: String, required: true },
-      en: { type: String, required: true },
+      id: { type: String },
+      en: { type: String },
     },
     fullDesc: {
-      id: { type: String, required: true },
-      en: { type: String, required: true },
+      id: { type: String },
+      en: { type: String },
     },
-    date: { type: String, required: true },
   },
   { timestamps: true }
 );
 
-const News = mongoose.model.News || mongoose.model("News", newsSchema);
+const News = mongoose.models.News || mongoose.model("News", newsSchema);
 
 export default News;

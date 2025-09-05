@@ -9,7 +9,7 @@ const NewsCard = ({ news }) => {
       {/* Gambar */}
       <div className="relative w-full aspect-[16/9]">
         <Image
-          src={`http://localhost:5000${news.image}`}
+          src={news.image}
           alt={news.title}
           fill
           unoptimized

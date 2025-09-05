@@ -92,8 +92,14 @@ useEffect(() => {
         <input
         type="file"
         accept="image/*"
-        onChange={(e) => handleFileUpload(e, setNews)}
+        onChange={async (e) => {
+          const url = await handleFileUpload(e);   // ✅ ambil url dari utils
+          if (url) {
+            setNews((prev) => ({ ...prev, image: url })); // ✅ update state produk
+          }
+        }}
       />
+
 
         
         {/* Deskripsi Singkat */}

@@ -16,7 +16,7 @@ export default function AddNewsPage() {
   const [fullId, setFullId] = useState("");
   const [fullEn, setFullEn] = useState("");
   const [date, setDate] = useState("");
-  // const [uploading, setUploading] = useState(false);
+  const [uploading, setUploading] = useState(false);
 
   // const handleFileUpload = async (e) => {
   //   if (!e.target.files?.[0]) return;
@@ -37,7 +37,12 @@ export default function AddNewsPage() {
   //     setUploading(false);
   //   }
   // };
-
+  const onFileChange = async (e) => {
+      setUploading(true);
+      const url = await handleFileUpload(e); // ✅ panggil util
+      if (url) setImage(url); // ✅ simpan URL Cloudinary ke state
+      setUploading(false);
+    };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -73,11 +78,12 @@ export default function AddNewsPage() {
         {/* Gambar */}
         {/* <input className="w-full border p-2 rounded" placeholder="URL Gambar" value={image} onChange={(e) => setImage(e.target.value)} /> */}
         <p>Masukkan Gambar</p>
-        <input
-        type="file"
-        accept="image/*"
-        onChange={(e) => handleFileUpload(e, setNews)}
-      />
+        <p>Masukkan Gambar</p>
+        <input type="file" accept="image/*" onChange={onFileChange} />
+        {uploading && <p>Mengunggah gambar...</p>}
+        {image && (
+          <img src={image} alt="Preview" className="mt-2 w-32 rounded shadow" />
+        )}
 
         {uploading && <p>Mengunggah file...</p>}
 
