@@ -9,8 +9,8 @@ export default function AddNewsPage() {
 
   const [titleId, setTitleId] = useState("");
   const [titleEn, setTitleEn] = useState("");
-  // const [image, setImage] = useState("");
-  // const [file, setFile] = useState(null);
+  const [image, setImage] = useState("");
+  const [file, setFile] = useState(null);
   const [shortId, setShortId] = useState("");
   const [shortEn, setShortEn] = useState("");
   const [fullId, setFullId] = useState("");
