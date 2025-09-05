@@ -5,7 +5,7 @@ const nextConfig = {
   },
   i18n: {
     locales: ["id", "en"], // bahasa yang tersedia
-    defaultLocale: "id",   // bahasa default
+    defaultLocale: "en",   // bahasa default
   },
   images: {
     remotePatterns: [
