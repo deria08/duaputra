@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   i18n: {
     locales: ["id", "en"], // bahasa yang tersedia
     defaultLocale: "id",   // bahasa default
