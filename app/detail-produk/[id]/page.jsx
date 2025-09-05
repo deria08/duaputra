@@ -20,7 +20,7 @@ const ProductDetail = () => {
     if (!id) return;
     setLoading(true);
 
-    fetch(`http://localhost:5000/api/products/${id}?lang=${lang}`)
+    fetch(`/api/products/${id}?lang=${lang}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -34,7 +34,7 @@ const ProductDetail = () => {
 
   // Fetch produk lain
   useEffect(() => {
-    fetch(`http://localhost:5000/api/products?lang=${lang}`)
+    fetch(`/api/products?lang=${lang}`)
       .then((res) => res.json())
       .then((data) => {
         const others = data.filter((item) => item._id !== id);
@@ -73,7 +73,7 @@ const ProductDetail = () => {
             {/* Gambar Utama */}
             <div className="w-full mb-4 rounded-lg overflow-hidden">
               <Image
-                src={`http://localhost:5000${product.image}`}
+                src={product.image}
                 alt={product.name[lang]}
                 width={1200}
                 height={800}
