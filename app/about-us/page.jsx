@@ -15,19 +15,19 @@ export default function TentangKami() {
   const { lang } = useLanguage();
 
   useEffect(() => {
-  fetch("http://localhost:5000/api/teams/kategori/dewan")
+  fetch("/api/our-teams/kategori/dewan")
     .then(res => res.json())
     .then(data => setTimDewan(data));
 
-  fetch("http://localhost:5000/api/teams/kategori/manager")
+  fetch("/api/our-teams/kategori/manager")
     .then(res => res.json())
     .then(data => setTimManager(data));
 
-  fetch("http://localhost:5000/api/teams/kategori/other")
+  fetch("/api/our-teams/kategori/other")
     .then(res => res.json())
     .then(data => setOtherTim(data));
 
-  fetch("http://localhost:5000/api/teams/kategori/asisten")
+  fetch("/api/our-teams/kategori/asisten")
     .then(res => res.json())
     .then(data => setTimAsisten(data[0])); // asisten hanya 1 orang
 }, []);

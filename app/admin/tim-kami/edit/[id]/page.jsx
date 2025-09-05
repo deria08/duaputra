@@ -4,47 +4,48 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 
 export default function EditTeamPage() {
-  const { id } = useParams();
+  const { id } = useParams(); // ✅ id dari /admin/tim-kami/[id]
   const router = useRouter();
-  const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
-  const [file, setFile] = useState(null);
   const [position, setPosition] = useState("");
   const [kategori, setKategori] = useState("dewan");
   const [uploading, setUploading] = useState(false);
 
-  // fetch data team by id
+  // ✅ Fetch team by id
   useEffect(() => {
-    if (!id) return;
-    fetch(`${API_BASE}/api/teams/id/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setName(data.name || "");
-        setImage(data.image || "");
-        setPosition(data.position || "");
-        setKategori(data.kategori || "dewan");
-      });
-  }, [id, API_BASE]);
+  if (!id) return;
+  fetch(`/api/our-teams/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("API response:", data); // 👈 debug
+      setName(data.name || "");
+      setImage(data.image || "");
+      setPosition(data.position || "");
+      setKategori(data.kategori || "dewan");
+    })
+    .catch((err) => console.error("Gagal fetch team:", err));
+}, [id]);
 
-  // ✅ fungsi upload ada di scope komponen
+
+  // ✅ Upload ke Cloudinary
   const handleFileUpload = async (e) => {
-    if (!e.target.files || !e.target.files[0]) return;
+    if (!e.target.files?.[0]) return;
     const selectedFile = e.target.files[0];
-    setFile(selectedFile);
 
     const formData = new FormData();
     formData.append("file", selectedFile);
     setUploading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/upload", {
+      const res = await fetch("/api/upload", {
         method: "POST",
-        body: formData, // biarkan fetch atur Content-Type
+        body: formData,
       });
 
       const data = await res.json();
-      setImage(data.url);
+      setImage(data.url || data.secure_url); // ✅ pastikan pakai salah satu
     } catch (err) {
       console.error("Upload gagal:", err);
     } finally {
@@ -52,10 +53,11 @@ export default function EditTeamPage() {
     }
   };
 
+  // ✅ Update team
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch(`http://localhost:5000/api/teams/id/${id}`, {
+    await fetch(`/api/our-teams/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, image, position, kategori }),
@@ -79,13 +81,12 @@ export default function EditTeamPage() {
         <input type="file" accept="image/*" onChange={handleFileUpload} />
         {uploading && <p>Mengunggah file...</p>}
         {image && (
-        <img
-          src={image} // langsung pake URL dari server/Cloudinary
-          alt="Preview"
-          className="w-40 mt-2 rounded"
-        />
-      )}
-
+          <img
+            src={image}
+            alt="Preview"
+            className="w-40 mt-2 rounded shadow"
+          />
+        )}
 
         <input
           className="w-full border p-2 rounded"

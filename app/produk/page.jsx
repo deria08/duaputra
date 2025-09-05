@@ -15,23 +15,23 @@ export default function ProductPage() {
   const [cephalopoda, setCephalopoda] = useState([]);
 
   useEffect(() => {
-    // fetch per kategori
-    fetch("http://localhost:5000/api/products/kategori/ikan")
-      .then(res => res.json())
-      .then(data => setIkan(data));
+  fetch("/api/products/ikan")
+    .then(res => res.json())
+    .then(data => setIkan(data));
 
-    fetch("http://localhost:5000/api/products/kategori/udang")
-      .then(res => res.json())
-      .then(data => setUdang(data));
+  fetch("/api/products/udang")
+    .then(res => res.json())
+    .then(data => setUdang(data));
 
-    fetch("http://localhost:5000/api/products/kategori/valueadded")
-      .then(res => res.json())
-      .then(data => setValueAdded(data));
+  fetch("/api/products/valueadded")
+    .then(res => res.json())
+    .then(data => setValueAdded(data));
 
-    fetch("http://localhost:5000/api/products/kategori/cephalopoda")
-      .then(res => res.json())
-      .then(data => setCephalopoda(data));
-  }, [lang]);
+  fetch("/api/products/cephalopoda")
+    .then(res => res.json())
+    .then(data => setCephalopoda(data));
+}, [lang]);
+
 
   const productSubmenu = [
     { name: lang === "id" ? "Ikan" : "Fish", path: "#ikan" },
@@ -54,7 +54,7 @@ export default function ProductPage() {
             >
               {/* Gambar */}
               <Image
-                src={`http://localhost:5000${item.image}`}
+                src={item.image}
                 alt={item.name[lang]}
                 width={600}
                 height={400}

@@ -13,7 +13,7 @@ const NewsList = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/api/news?lang=${lang}`)
+    fetch(`/api/news?lang=${lang}`)
       .then((res) => res.json())
       .then((data) => {
         setNewsList(data);

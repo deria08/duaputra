@@ -27,7 +27,7 @@ export default function AddTeamPage() {
       return;
     }
 
-    await fetch("http://localhost:5000/api/teams", {
+    await fetch("/api/our-teams", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, image, position, kategori }),

@@ -8,7 +8,7 @@ export default function ProductListPage() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-  fetch("http://localhost:5000/api/products")
+  fetch("/api/products")
     .then((res) => res.json())
     .then((data) => {
       // kalau backend return { products: [...] }
@@ -20,7 +20,7 @@ export default function ProductListPage() {
 
   const handleDelete = async (id) => {
     if (!confirm("Apakah Anda yakin ingin menghapus produk ini?")) return;
-    await fetch(`http://localhost:5000/api/products/${id}`, { method: "DELETE" });
+    await fetch(`/api/products/${id}`, { method: "DELETE" });
     setProducts(products.filter((item) => item._id !== id));
   };
 
@@ -56,7 +56,7 @@ export default function ProductListPage() {
                   <td className="p-3 border">
                     {item.image ? (
                       <Image
-                        src={`http://localhost:5000${item.image}`}
+                        src={item.image}
                         alt={item.name?.id}
                         width={80}
                         height={80}

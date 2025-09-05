@@ -20,7 +20,7 @@ useEffect(() => {
   if (!id) return;
   const fetchNews = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/news/${id}?lang=all`);
+      const res = await fetch(`/api/news/${id}?lang=all`);
       if (!res.ok) throw new Error("Data berita tidak ditemukan");
       const data = await res.json();
 
@@ -51,7 +51,7 @@ useEffect(() => {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-    await fetch(`http://localhost:5000/api/news/${id}`, {
+    await fetch(`/api/news/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(news),

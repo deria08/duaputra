@@ -13,14 +13,14 @@ export default function EditProductPage() {
     image: "",
     kategori: ""
   });
-  const [file, setFile] = useState(null);
-  const [uploading, setUploading] = useState(false);
+  // const [file, setFile] = useState(null);
+  // const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
     if (!id) return;
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/products/${id}`);
+        const res = await fetch(`/api/products/${id}`);
         if (!res.ok) throw new Error("Data produk tidak ditemukan");
         const data = await res.json();
         setProduct(data);
@@ -42,7 +42,7 @@ export default function EditProductPage() {
 
   //   setUploading(true);
   //   try {
-  //     const res = await fetch("http://localhost:5000/api/upload", {
+  //     const res = await fetch("/api/upload", {
   //       method: "POST",
   //       body: formData,
   //     });
@@ -57,7 +57,7 @@ export default function EditProductPage() {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-    await fetch(`http://localhost:5000/api/products/${id}`, {
+    await fetch(`/api/products/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(product),

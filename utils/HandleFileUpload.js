@@ -1,4 +1,3 @@
-// utils/handleFileUpload.js
 export const handleFileUpload = async (e) => {
   if (!e.target.files || !e.target.files[0]) return null;
 
@@ -7,7 +6,7 @@ export const handleFileUpload = async (e) => {
   formData.append("file", selectedFile);
 
   try {
-    const res = await fetch("http://localhost:5000/api/upload", {
+    const res = await fetch("/api/upload", {
       method: "POST",
       body: formData,
     });
@@ -15,7 +14,8 @@ export const handleFileUpload = async (e) => {
     if (!res.ok) throw new Error("Upload gagal");
 
     const data = await res.json();
-    return data.url; // ✅ balikin URL aja
+    console.log("Upload response:", data); // ✅ debug
+    return data.url; // ✅ pakai `url` sesuai API
   } catch (err) {
     console.error("Upload gagal:", err);
     return null;

@@ -46,7 +46,7 @@ export default function AddNewsPage() {
       return;
     }
 
-    await fetch("http://localhost:5000/api/news", {
+    await fetch("/api/news", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

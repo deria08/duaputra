@@ -7,7 +7,7 @@ export default function NewsListPage() {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/news")
+    fetch("/api/news")
       .then((res) => res.json())
       .then((data) => setNews(data))
       .catch((err) => console.error(err));
@@ -15,7 +15,7 @@ export default function NewsListPage() {
 
   const handleDelete = async (id) => {
     if (!confirm("Hapus berita ini?")) return;
-    await fetch(`http://localhost:5000/api/news/${id}`, { method: "DELETE" });
+    await fetch(`/api/news/${id}`, { method: "DELETE" });
     setNews(news.filter((item) => item._id !== id));
   };
 
