@@ -8,6 +8,6 @@ const contactSchema = new mongoose.Schema({
   pesan: { type: String, required: true },
 }, { timestamps: true });
 
-const Contact = mongoose.models.Contact || mongoose.model("Contact", teamSchema);
+const Contact = mongoose.models.Contact || mongoose.model("Contact", contactSchema);
 
 export default Contact;
