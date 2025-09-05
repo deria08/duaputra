@@ -1,10 +1,8 @@
 import connectDB from "@/backend/config/db";
 import Product from "@/backend/models/Product";
-import { NextResponse} from "next/server";
 connectDB();
 // GET all products (filter by kategori optional)
 export async function GET(req) {
-  return NextResponse.json({ message: "API Products jalan ✅" });
   try {
     const { searchParams } = new URL(req.url);
     const kategori = searchParams.get("kategori");
