@@ -57,7 +57,7 @@ export default function ProductPage() {
               alt={item.name[lang]}
               width={600}
               height={400}
-              className="w-full h-40 sm:h-48 md:h-64 object-cover transform transition duration-500 group-hover:scale-110"
+              className="w-full h-45 sm:h-52 md:h-64 object-cover transform transition duration-500 group-hover:scale-110"
             />
 
             {/* Nama Produk */}
