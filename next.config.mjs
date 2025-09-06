@@ -3,10 +3,10 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  i18n: {
-    locales: ["id", "en"], // bahasa yang tersedia
-    defaultLocale: "en",   // bahasa default
-  },
+  // i18n: {
+  //   locales: ["id", "en"],
+  //   defaultLocale: "en",  
+  // },
   images: {
     remotePatterns: [
       {
