@@ -30,6 +30,13 @@ export default function EditProductPage() {
     };
     fetchProduct();
   }, [id]);
+      setProduct({
+      name: data.name || { id: "", en: "" },
+      description: data.description || { id: "", en: "" },
+      image: data.image || "",
+      kategori: data.kategori || "ikan",
+    });
+
   const handleUpdate = async (e) => {
     e.preventDefault();
     await fetch(`/api/products/${id}`, {

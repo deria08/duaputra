@@ -12,20 +12,23 @@ export default function Footer() {
       <footer className="bg-gradient-to-r from-[#0A1931] to-[#1B1F3B] text-white">
         <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row md:justify-between md:items-start gap-8">
           {/* Logo + Alamat */}
-          <div className="flex items-center md:items-start md:gap-8 w-full md:w-1/2">
-            <Image src={assets.logo}
-            alt="logo"
-            width={180}
-            height={180}
-            className="object-contain"/>
-            <div className="text-sm leading-relaxed max-w-xs">
-              <p className="font-bold mb-2">PT. Dua Putra Utama Makmur Tbk.</p>
-              <p>
-                Jl. Raya Pati - Juwana No.km.7, Dukuh Guyangan, 
-                RT 01/RW 05, Purworejo, Pati, Jawa Tengah, 59119
-              </p>
-            </div>
-          </div>
+      <div className="flex flex-col sm:flex-row items-center sm:items-start sm:gap-8 w-full md:w-1/2">
+        <Image
+          src={assets.logo}
+          alt="logo"
+          width={180}
+          height={180}
+          className="object-contain mb-4 sm:mb-0"
+        />
+        <div className="text-sm leading-relaxed max-w-xs text-center sm:text-left">
+          <p className="font-bold mb-2">PT. Dua Putra Utama Makmur Tbk.</p>
+          <p>
+            Jl. Raya Pati - Juwana No.km.7, Dukuh Guyangan, 
+            RT 01/RW 05, Purworejo, Pati, Jawa Tengah, 59119
+          </p>
+        </div>
+      </div>
+
 
           {/* Menu Links + Contact */}
           <div className="flex flex-col md:flex-row md:gap-10 w-full md:w-1/2 justify-between">
