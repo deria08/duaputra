@@ -45,31 +45,30 @@ export default function ProductPage() {
     <section id={id} className="py-16 border-t border-gray-300">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">{title}</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {items.map((item) => (
-            <a
-              key={item._id}
-              // href={`/detail-produk/${item._id}`}
-              className="group relative block rounded-xl overflow-hidden shadow-md hover:shadow-lg transition"
-            >
-              {/* Gambar */}
-              <Image
-                src={item.image}
-                alt={item.name[lang]}
-                width={600}
-                height={400}
-                className="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110"
-              />
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+        {items.map((item) => (
+          <a
+            key={item._id}
+            className="group relative block rounded-xl overflow-hidden shadow-md hover:shadow-lg transition"
+          >
+            {/* Gambar */}
+            <Image
+              src={item.image}
+              alt={item.name[lang]}
+              width={600}
+              height={400}
+              className="w-full h-40 sm:h-48 md:h-64 object-cover transform transition duration-500 group-hover:scale-110"
+            />
 
-              {/* Nama Produk */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <h2 className="text-white text-xl font-bold text-center drop-shadow-lg">
-                  {/* {item.name[lang]} */}
-                </h2>
-              </div>
-            </a>
-          ))}
-        </div>
+            {/* Nama Produk */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <h2 className="text-white text-sm sm:text-base md:text-xl font-bold text-center drop-shadow-lg">
+                {/* {item.name[lang]} */}
+              </h2>
+            </div>
+          </a>
+        ))}
+      </div>
       </div>
     </section>
   );
