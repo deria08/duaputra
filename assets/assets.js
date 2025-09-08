@@ -47,6 +47,114 @@ export const assets = {
   maincommisioner,
   financem,
 };
+export const milestonesData = {
+  en: [
+    {
+      year: "2005-2012",
+      details: [
+        "Started the fishery business in 2005",
+        "In 2008, established a legal entity in the form of CV Dua Putra Dewa and to be PT Dua Putra Utama Makmur in 2012",
+        "In 2012, set 2 cold storage facilities in Juwana and Pati (both are in Central Java) at the capacity of 500 Tons each",
+      ],
+    },
+    {
+      year: "2013-2014",
+      details: [
+        "In 2013, started the export business for shrimp, baby octopus and squid products with initial market to Malaysia",
+        "In 2014, expanded the export market to Japan, China, Thailand, South Korea, Singapore",
+        "In 2014, build new cold storage facility of 3,000 Tons in Pati, Central Java",
+      ],
+    },
+    {
+      year: "2015",
+      details: [
+        "Strengthen export market penetration into Asia market. Develop new processing products",
+        "Executed Initial Public Offering (IPO) on Indonesia Stock Exchange as a public listed company",
+        "Obtain Certificate of Registration from Food and Drug Administration (FDA) USA",
+      ],
+    },
+    {
+      year: "2016",
+      details: [
+        "Build new processing facilities for Raw Shrimp, VA & Cooked Shrimp.",
+        "Installed new cold storage with additional capacity of 21,000 Tons (Total Cap. 25,000 Tons).",
+        "Carried out export into Middle East, US and a number of Asian countries.",
+        "Received an internationally recognition certification and awards."
+      ],
+    },
+    {
+      year: "2017",
+      details: [
+        "Strengthen export to Japan's market.",
+        "Starting develop VA & Premium products.",
+        "Starting operating new production facilities commercially.",
+        "Build new Sashimi Processing Facilities.",
+        "Upgrade Certification: ISO 9001, BRC, HACCP."
+      ],
+    },
+    {
+      year: "2025",
+      details:[
+        "Set up Sashimi Plant.",
+        "Expanded market to Middle East."
+      ]
+    }
+  ],
+  id: [
+    {
+      year: "2005-2012",
+      details: [
+        "Memulai usaha perikanan pada tahun 2005",
+        "Pada 2008, mendirikan badan hukum CV Dua Putra Dewa dan menjadi PT Dua Putra Utama Makmur pada 2012",
+        "Pada 2012, membangun 2 fasilitas cold storage di Juwana dan Pati (Jawa Tengah) dengan kapasitas masing-masing 500 Ton",
+      ],
+    },
+    {
+      year: "2013-2014",
+      details: [
+        "Pada 2013, memulai bisnis ekspor udang, baby octopus, dan cumi dengan pasar awal Malaysia",
+        "Pada 2014, memperluas pasar ekspor ke Jepang, China, Thailand, Korea Selatan, Singapura",
+        "Pada 2014, membangun cold storage baru dengan kapasitas 3.000 Ton di Pati, Jawa Tengah",
+      ],
+    },
+    {
+      year: "2015",
+      details: [
+        "Memperkuat penetrasi pasar ekspor ke Asia. Mengembangkan produk olahan baru",
+        "Melaksanakan IPO di Bursa Efek Indonesia sebagai perusahaan publik",
+        "Mendapatkan Sertifikat Registrasi dari Food and Drug Administration (FDA) USA",
+      ],
+    },
+    {
+      year: "2016",
+      details:[
+        "Membangun fasilitas pemrosesan baru untuk Udang Mentah, Udang Asin & Udang Masak.",
+        "Memasang penyimpanan dingin baru dengan tambahan kapasitas 21.000 Ton (Total Kapasitas 25.000 Ton).",
+        "Melakukan ekspor ke Timur Tengah, AS, dan sejumlah negara Asia.",
+        "Menerima sertifikasi dan penghargaan internasional."
+      ],
+    },
+    {
+      year:"2017",
+      details:[
+        "Memperkuat ekspor ke pasar Jepang.",
+        "Mulai mengembangkan produk Udang Asin & Premium.",
+        "Mulai mengoperasikan fasilitas produksi baru secara komersial.",
+        "Membangun Fasilitas Pemrosesan Sashimi baru.",
+        "Meningkatkan Sertifikasi: ISO 9001, BRC, HACCP."
+      ],
+    },
+    {
+      year: "2025",
+      details:[
+        "Mendirikan Pabrik Sashimi.",
+        "Memperluas pasar ke Timur Tengah."
+      ]
+    }
+    
+  ],
+};
+
 export const sliderData = {
   id: [
     {
@@ -119,144 +227,3 @@ export const sliderData = {
       },
     ],
   };
-export const profilPerusahaan = {
-  description: ["PT Dua Putra Utama Makmur Tbk (DPUM) adalah perusahaan perikanan yang fokus menghadirkan produk makanan laut dengan kualitas premium. Berdiri sejak 9 Mei 2012 di Pati, Jawa Tengah, DPUM terus berkembang pesat dan kini dikenal sebagai salah satu perusahaan seafood terkemuka di Indonesia.",
-"Perjalanan bisnis DPUM dimulai dengan ekspor ke Malaysia pada tahun pendiriannya, lalu merambah ke Tiongkok, Korea Selatan, Thailand, Jepang, dan Singapura di tahun 2014. Tidak berhenti di situ, kapasitas cold storage perusahaan juga terus diperluas, dari 3.000 ton di awal berdiri hingga kini mampu menampung lebih dari 25.000 ton produk.",
-"Tahun 2015 menjadi tonggak penting karena DPUM resmi melantai di Bursa Efek Indonesia (IPO) dan mendapatkan pengakuan internasional lewat sertifikasi dari FDA Amerika Serikat. Setahun kemudian, perusahaan meraih sertifikasi bergengsi seperti BRC Food, HACCP, ISO 9001, serta sertifikat Halal dari MUI, yang semakin mengukuhkan kualitas dan keamanan produknya.",
-"Memasuki 2017, DPUM mulai memperkuat lini usaha dengan memproduksi berbagai olahan makanan laut bernilai tambah. Di tahun 2020, perusahaan juga memperluas bisnis ke penyewaan cold storage yang tidak hanya terbatas pada produk perikanan, tapi juga mencakup sektor peternakan dan agribisnis. Selain itu, jangkauan ekspor pun semakin luas hingga ke Australia.",
-"Dengan visi menghadirkan produk laut berkualitas tinggi untuk pasar domestik maupun internasional, DPUM terus berkomitmen berinovasi, menjaga kualitas, serta berkontribusi dalam mengharumkan nama Indonesia di industri perikanan dunia."
-]};
-
-export const visiMisi = {
-  items: [
-    {
-      title: "GOOD PERFORMANCE",
-      description: `Kami berkomitmen untuk memproduksi produk yang mengikuti standar Kualitas,
-      Keamanan Pangan, Legal, Kesehatan dan Keamanan Lingkungan, Halal, dan Berkelanjutan.`
-    },
-    {
-      title: "KINERJA YANG SANGAT BAIK",
-      description: "Kami bergerak maju dengan menerapkan strategi keberlanjutan kami sendiri."
-    },
-    {
-      title: "TEAM WORK",
-      description: "Hubungan kerja yang baik dan saling mendukung dalam segala lini, menjadi faktor penting untuk mewujudkan visi dan misi Perseroan."
-    },
-    {
-      title: "FASILITAS TERBAIK",
-      description: "Teknologi terbaru untuk memaksimalkan kualitas dan efisiensi dalam mengantarkan produk segar dan higienis."
-    },
-    {
-      title: "EXCELLENT PEOPLE",
-      description: "Memberikan pelayanan terbaik dengan karyawan terbaik."
-    }
-  ]
-};
-
-export const timDewan = [
-  {
-    nama: "Sherley Chandra Hadipurnomo",
-    jabatan: "Main Commissioner",
-    foto: maincommisioner,
-    deskripsi: ["Sherley Chandra Hadipurnomo akan memimpin sebagai Komisaris Utama PT Dua Putra Utama Makmur Tbk dengan semangat reposisi strategis menuju pasar global. Lahir di Surabaya dan menamatkan Bachelor of Business Administration (1997), ia memiliki latar belakang keluarga pengusaha yang membentuk jiwa kepemimpinannya.",
-      "Perjalanan kariernya dimulai di PT Sinar Mas Agro Resources and Technology Tbk (1998), lalu bergabung di bisnis keluarga (1999). Ia kemudian mendirikan PT Rama Indonesia (2010) yang berkembang menjadi skala nasional, serta PT Rama Putra Djaya (2018) dengan produk unggulan Lezza Hanarose Ngejoss. Saat pandemi, ia menunjukkan kepemimpinan berempati dengan tidak melakukan pengurangan karyawan.",
-      "Dikenal tegas, ambisius, berjiwa sosial, dan menyukai tantangan, Sherley juga menjaga disiplin lewat olahraga lari. Ke depan, visinya sebagai Komisaris Utama adalah membawa perusahaan menembus pasar global sekaligus membangun kesejahteraan karyawan sebagai keluarga besar perusahaan, membuktikan kepemimpinan perempuan berlandaskan visi, integritas, dan perubahan nyata.",
-  ]  },
-  {
-    nama: "Bambang Panca Putra",
-    jabatan: "President Director",
-    foto: pimpinan,
-    },
-    {
-    nama: "R. Sri Dwi Mamik Wijaya",
-    jabatan: "Operational Director",
-    foto: operationaldir,
-    },
-    {
-    nama: "Adi Winardi",
-    jabatan: "Finance Director",
-    foto: financedir,
-    },
-    {
-    nama: "Angela",
-    jabatan: "Vice of Director Finance",
-    foto: cofinance,
-    },
-];
-export const timManager = [
-  {
-    nama: "Mohammad Nur Hasan",
-    jabatan: "Finance Accounting & Tax Manager",
-    foto: financem,
-    deskripsi: ["Mohammad Nur Hasan bergabung dengan PT Dua Putra Utama Makmur Tbk sebagai Finance Accounting & Tax Manager. Berpengalaman di bidang keuangan, akuntansi, dan pajak, ia pernah menjabat di Sampoerna Group, PT Mega Perintis Tbk, dan PT Kirana Megatara Tbk. Dengan rekam jejak tersebut, Hasan siap berkontribusi strategis dalam optimalisasi fungsi keuangan serta mendukung pertumbuhan perusahaan ke depan."
-
-    ]},
-  {
-    nama: "Munawir",
-    jabatan: "Refrigeration Manager",
-    foto: refrigerationM,
-    deskripsi: ["Munawir, dengan pengalaman 26 tahun di bidang engineering dan spesialisasi sistem refrigerasi, kini menjabat sebagai Refrigeration Manager PT Dua Putra Utama Makmur Tbk. Kariernya mencakup peran strategis di perusahaan terkemuka seperti PT Bumi Pangan Utama dan PT Phillips Seafood Indonesia, membuktikan kemampuannya dalam memimpin tim, mengelola proyek, serta meningkatkan efisiensi operasional. Dengan keahlian dan visinya, Munawir siap menghadirkan inovasi dan efisiensi baru yang mendukung pertumbuhan perusahaan."
-  ]  },
-    {
-    nama: "Azuar",
-    jabatan: "Engineering Manager",
-    foto: engineerM,
-    deskripsi: ["Azuar, dengan pengalaman lebih dari 20 tahun di bidang teknik, kini menjabat sebagai Engineering Manager PT Dua Putra Utama Makmur Tbk. Keahliannya di berbagai disiplin engineering serta kemampuannya memimpin tim menjadi kekuatan baru dalam mendukung pengembangan perusahaan dan kesiapan bersaing di industri global."
-    ]},
-    {
-    nama: "Mikhael Lintang A.K",
-    jabatan: "HRD",
-    foto: hrd,
-    deskripsi: ["PT Dua Putra Utama Makmur Tbk menyambut Mikhael Lintang Adi Keswara sebagai bagian dari tim HRD & GA. Berpengalaman di General Affair, audit sistem manajemen (ISO 9001, OSHASS, BSCI), serta kepatuhan ketenagakerjaan dan K3, Mikhael dikenal profesional dan berdedikasi. Dengan keahliannya, ia siap mendukung terciptanya lingkungan kerja yang unggul, berkelanjutan, dan mendukung pertumbuhan perusahaan."
-    ]},
-    {
-    nama: "Ma'ruddin",
-    jabatan: "Marketing Manager",
-    foto: marketMM,
-    deskripsi: ["Ma'ruddin, S.E., bergabung sebagai Marketing Export PT Dua Putra Utama Makmur Tbk untuk memperkuat ekspor dan memperluas pasar internasional. Berpengalaman di industri makanan dan pernah sukses sebagai Export Sales Manager, ia memiliki keahlian dalam negosiasi, membangun hubungan, serta melihat peluang pasar baru yang mendukung pertumbuhan perusahaan."
-    ]},
-    {
-    nama: "Triasti Wulandari",
-    jabatan: "Marketing Manager",
-    foto: marketMF,
-    deskripsi: ["Triasti Wulandari bergabung sebagai Marketing Manager PT Dua Putra Utama Makmur Tbk dengan pengalaman lebih dari 15 tahun di industri barang konsumen. Keahliannya dalam pengembangan bisnis, pemasaran, serta manajemen rantai pasokan ekspor/impor menjadikannya aset penting bagi perusahaan. Dengan semangat kewirausahaan dan kemampuan analitis yang tajam, ia siap memimpin tim pemasaran untuk mendukung pertumbuhan berkelanjutan."
-    ]},    
-];
-export const otherTim = [
-  {
-    nama: "Egga Yusuf",
-    jabatan: "Financial Consultant",
-    foto: financecons,
-    deskripsi: [
-      "Berpengalaman sejak 2008 di Sampoerna Group, industri farmasi, dan manufaktur, ia menguasai bidang perpajakan, audit internal, hingga finance accounting. Dengan latar belakang akademis akuntansi dan pengalaman lintas industri, Egga siap memimpin fungsi keuangan, mengembangkan strategi, serta mendukung pertumbuhan berkelanjutan perusahaan."
-    ]
-  },
-  {
-    nama: "Julius Siwalette",
-    jabatan: "Corporate Secretary",
-    foto: corporateS,
-    deskripsi: [
-      "PT Dua Putra Utama Makmur Tbk menyambut Julius Siwalette sebagai Corporate Secretary, peran penting dalam menjembatani komunikasi dengan pemangku kepentingan serta memastikan tata kelola perusahaan yang baik.Berlatar belakang Pendidikan Hukum dengan pengalaman di perbankan, BPPN, hingga lebih dari 10 tahun sebagai HR & GA Manager, Julius memiliki pemahaman komprehensif tentang dinamika bisnis. Dengan kepemimpinannya, ia diharapkan memperkuat transparansi dan akuntabilitas perusahaan."
-    ]
-  },
-  {
-    nama: "Ahmad Sofian",
-    jabatan: "Head of Production",
-    foto: ProductHead,
-    deskripsi: [
-      "PT Dua Putra Utama Makmur Tbk menyambut Ahmad Sofian, S.Si., dengan pengalaman lebih dari 18 tahun di industri pengolahan udang. Lulusan IPB ini ahli dalam manajemen produksi, perencanaan, R&D, inovasi, dan lean manufacturing. Rekam jejaknya dalam meningkatkan efektivitas produksi dan produktivitas berbasis KPI menjadikannya aset berharga untuk mendukung efisiensi dan pencapaian tujuan strategis perusahaan."
-    ]
-  }
-];
-
-  export const timAsisten = {
-    nama: "Tim Asisten Manager",
-    jabatan: "Assistant Manager Team",
-    foto: assistantM,
-    deskripsi: [
-      "PT Dua Putra Utama Makmur Tbk dengan bangga memperkenalkan tim Assistant Manager kami yang telah berdedikasi. Mereka adalah tulang punggung operasional perusahaan, memastikan keunggulan di berbagai departemen.",
-      "Kehadiran tim Assistant Manager yang kompeten ini mendorong PT Dua Putra Utama Makmur Tbk untuk meningkatkan pertumbuhan di setiap lini bisnis, meningkatkan efisiensi operasional, dan memastikan kualitas produk serta layanan yang prima.",
-      "Sehingga kekuatan perusahaan semakin siap untuk mengembangkan bisnis dengan kompetisi tinggi baik di tingkat nasional maupun internasional. Pengalaman setiap individu di tim Assistant Manager ini pun menjadi nilai tambah untuk menjadikan perusahaan bersaing di industri ini.",
-      "Kami berharap tim Assistant Manager ini akan terus berkembang, berinovasi, dan menjadi pemimpin masa depan yang membawa PT Dua Putra Utama Makmur Tbk menuju kesuksesan yang lebih besar."
-    ] 
-};

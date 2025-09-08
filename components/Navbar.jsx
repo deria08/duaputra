@@ -1,150 +1,3 @@
-// "use client";
-// import React, { useEffect, useState } from "react";
-// import Link from "next/link";
-// import { usePathname } from "next/navigation";
-// import Image from "next/image";
-
-// const Navbar = () => {
-//   const pathname = usePathname();
-//   const [showNavbar, setShowNavbar] = useState(true);
-//   const [lastScrollY, setLastScrollY] = useState(0);
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       if (window.scrollY > lastScrollY) {
-//         setShowNavbar(false);
-//       } else {
-//         setShowNavbar(true);
-//       }
-//       setLastScrollY(window.scrollY);
-//     };
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, [lastScrollY]);
-
-//   const mainMenus = [
-//     { name: "Beranda", path: "/" },
-//     { name: "Berita", path: "/berita-list" },
-//     { name: "Produk", path: "/produk" },
-//     { name: "Kontak", path: "/kontak" },
-//   ];
-
-//   return (
-//     <div className="font-sans text-gray-800">
-//       {/* Navbar utama */}
-//       <header
-//         className={`fixed top-0 left-0 w-full bg-white shadow transition-transform duration-300 z-50 ${
-//           showNavbar ? "translate-y-0" : "-translate-y-full"
-//         }`}
-//       >
-//         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-//           {/* Logo */}
-//           <div className="flex items-center gap-2">
-//             <Link href="/">
-//               <Image
-//                 src="/logoku.png"
-//                 alt="logo"
-//                 width={50}
-//                 height={50}
-//                 className="object-contain"
-//               />
-//             </Link>
-//             <Link href="/" className="font-bold text-blue-600 text-sm md:text-base">
-//               PT Dua Putra Utama Makmur Tbk
-//             </Link>
-//           </div>
-
-//           {/* Menu Desktop */}
-//           <nav className="hidden md:flex gap-6">
-//             {mainMenus.map((menu) => (
-//               <Link
-//                 key={menu.path}
-//                 href={menu.path}
-//                 className={`text-gray-700 font-medium pb-1 transition hover:text-blue-600 hover:border-b-2 hover:border-blue-600 ${
-//                   pathname === menu.path
-//                     ? "text-blue-600 border-b-2 border-blue-600"
-//                     : ""
-//                 }`}
-//               >
-//                 {menu.name}
-//               </Link>
-//             ))}
-//           </nav>
-
-//           {/* Tombol Mobile */}
-//           <button
-//             onClick={() => setIsOpen(true)}
-//             className="md:hidden p-2 text-gray-700 hover:text-blue-600"
-//           >
-//             ☰
-//           </button>
-//         </div>
-//       </header>
-
-//       {/* Submenu */}
-//       <div
-//         className={`fixed left-0 pt-1 w-full bg-white border-b z-40 transition-all duration-300 ${
-//           showNavbar ? "top-[70px]" : "top-0"
-//         }`}
-//       >
-//         <div className="max-w-6xl mx-auto flex gap-6 px-4 py-2 text-sm font-medium text-gray-600">
-//           <Link href="about-us" className="hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1">
-//             Tentang Kami
-//           </Link>
-//           <Link href="#" className="hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1">
-//             Lokasi
-//           </Link>
-//         </div>
-//       </div>
-
-//       {/* Offcanvas Mobile Menu */}
-//       <div
-//         className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ${
-//           isOpen ? "translate-x-0" : "translate-x-full"
-//         }`}
-//       >
-//         {/* Header Offcanvas */}
-//         <div className="flex justify-between items-center p-4 border-b">
-//           <span className="font-bold text-lg text-blue-600">Menu</span>
-//           <button
-//             onClick={() => setIsOpen(false)}
-//             className="text-2xl text-gray-600 hover:text-red-500"
-//           >
-//             ✕
-//           </button>
-//         </div>
-
-//         {/* List Menu */}
-//         <nav className="flex flex-col p-4 space-y-4">
-//           {mainMenus.map((menu) => (
-//             <Link
-//               key={menu.path}
-//               href={menu.path}
-//               onClick={() => setIsOpen(false)}
-//               className={`block text-gray-700 font-medium transition hover:text-blue-600 ${
-//                 pathname === menu.path ? "text-blue-600" : ""
-//               }`}
-//             >
-//               {menu.name}
-//             </Link>
-//           ))}
-//         </nav>
-//       </div>
-
-//       {/* Background Overlay */}
-//       {isOpen && (
-//         <div
-//           className="fixed inset-0 bg-black bg-opacity-40 z-40"
-//           onClick={() => setIsOpen(false)}
-//         ></div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Navbar;
-// components/Navbar.jsx
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -188,7 +41,15 @@ const Navbar = ({ submenu = [] }) => {
   // menu berdasarkan bahasa
   const mainMenus = [
     { name: lang === "id" ? "Beranda" : "Home", path: "/" },
-    { name: lang === "id" ? "Tentang Kami" : "About Us", path: "/about-us" },
+    { name: lang === "id" ? "Tentang Kami" : "About Us", path: "#",
+      children: [
+      { name: lang === "id" ? "Perjalanan Kami" : "Our Journey", path: "/about-us/journey" },
+      { name: lang === "id" ? "Tentang Kami" : "About us", path: "/about-us" },
+      { name: lang === "id" ? "Visi Misi" : "Vision Mission", path: "/about-us/vision-mission" },
+      { name: lang === "id" ? "Mitra" : "Partners", path: "/partners" },
+      { name: lang === "id" ? "Sertifikasi" : "Certification", path: "/about-us/certificate" },
+    ],
+     },
     { name: lang === "id" ? "Berita" : "News", path: "/berita-list" },
     { name: lang === "id" ? "Produk" : "Products", path: "/produk" },
     { name: lang === "id" ? "Kontak" : "Contact", path: "/kontak" },
@@ -263,19 +124,40 @@ const Navbar = ({ submenu = [] }) => {
             </div>
 
             {mainMenus.map((menu) => (
-              <Link
-                key={menu.path}
-                href={menu.path}
-                className={`font-heading text-sm tracking-wide transition-colors ${
-                  pathname === menu.path
-                    ? "text-yellow-400 font-semibold"
-                    : menuTextClass
-                }`}
-              >
-                {menu.name}
-              </Link>
-            ))}
-          </nav>
+          <div key={menu.path} className="relative group">
+            <Link
+              href={menu.path}
+              className={`font-heading text-sm tracking-wide transition-colors ${
+                pathname === menu.path
+                  ? "text-yellow-400 font-semibold"
+                  : menuTextClass
+              }`}
+            >
+              {menu.name}
+            </Link>
+
+            {/* Dropdown */}
+            {menu.children && (
+              <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-200">
+                {menu.children.map((child) => (
+                  <Link
+                    key={child.path}
+                    href={child.path}
+                    className={`block px-4 py-2 text-sm transition-colors
+                    ${
+                      pathname === child.path
+                        ? "text-yellow-400 font-semibold"
+                        : "text-gray-700 hover:bg-gray-100 hover:text-[#1E3A8A]"
+                    }`}
+                  >
+                    {child.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </nav>
 
           {/* Tombol Mobile */}
           <button

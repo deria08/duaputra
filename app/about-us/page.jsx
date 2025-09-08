@@ -106,30 +106,47 @@ export default function TentangKami() {
       </section>
 
       {/* Visi & Misi */}
-      <section id="visi-misi" className="py-16">
-        <div className="max-w-5xl mx-auto px-6"> {/* samakan max-w dengan Profil Perusahaan */}
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
-            {lang === "id" ? "Visi Misi" : "Vision Mission"}
-          </h2>
-          <div className="space-y-5"> {/* beri jarak antar item */}
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">{lang === "id" ? "PERFORMA YANG BAIK" : "GOOD PERFORMANCE"}</h3>
-                <p className="text-gray-600 leading-relaxed">{lang === "id" ? "Kami berkomitmen untuk memproduksi produk yang mengikuti standar Kualitas, Keamanan Pangan, Legal, Kesehatan dan Keamanan Lingkungan, Halal, dan Berkelanjutan." : 
-                "We are committed to producing products that comply with Quality, Food Safety, Legal, Health and Environmental Safety, Halal, and Sustainable standards."}</p>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">{lang === "id" ? "KINERJA YANG SANGAT BAIK" : "EXCELLENT PERFORMANCE"}</h3>
-                <p className="text-gray-600 leading-relaxed">{lang === "id" ? "Kami bergerak maju dengan menerapkan strategi keberlanjutan kami sendiri." : 
-                "We are moving forward with implementing our own sustainability strategy."}</p>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">{lang === "id" ? "KERJA TIM" : "TEAM WORK"}</h3>
-                <p className="text-gray-600 leading-relaxed">{lang === "id" ? "Hubungan kerja yang baik dan saling mendukung dalam segala lini, menjadi faktor penting untuk mewujudkan visi dan misi Perseroan." : 
-                "Good work relations and mutual support in all lines, become an important factor for realizing the company's vision and mission."}</p>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">{lang === "id" ? "FASILITAS TERBAIK" : "BEST FACILITIES"}</h3>
-                <p className="text-gray-600 leading-relaxed">{lang === "id" ? "Teknologi terbaru untuk memaksimalkan kualitas dan efisiensi dalam mengantarkan produk segar dan higienis." : 
-                "The latest technology to maximize the quality and efficiency in delivering fresh and hygienic products."}</p>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">{lang === "id" ? "ORANG-ORANG YANG LUAR BIASA" : "EXCELLENT PEOPLE"}</h3>
-                <p className="text-gray-600 leading-relaxed">{lang === "id" ? "Memberikan pelayanan terbaik dengan karyawan terbaik." : 
-                "Providing the best service with the best employees."}</p>
-          </div>
-        </div>
-      </section>
+<section id="visi-misi" className="py-16 bg-white">
+  <div className="max-w-5xl mx-auto px-6 text-center">
+    {/* Judul utama */}
+    <h2 className="text-xl md:text-2xl font-medium text-gray-800 mb-2">
+      {lang === "id" ? "Kenali " : "Get To Know "}
+      <span className="font-bold text-blue-900">
+        {lang === "id" ? "Tujuan Kami" : "Our Goals"}
+      </span>
+    </h2>
+
+    <div className="grid md:grid-cols-2 gap-8 mt-10 relative">
+      {/* Garis pemisah tengah */}
+      <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-px bg-gray-300"></div>
+
+      {/* Visi */}
+      <div className="pr-6 text-left">
+        <h3 className="text-lg md:text-xl font-bold text-blue-900 mb-4">
+          {lang === "id" ? "Visi Kami" : "Our Vision"}
+        </h3>
+        <blockquote className="text-gray-600 italic leading-relaxed border-l-4 border-yellow-500 pl-4">
+          {lang === "id"
+            ? "Menjadi pemimpin global dalam produk perikanan siap saji yang inovatif dan premium, dengan memanfaatkan kekayaan laut Indonesia, teknologi rantai dingin, dan kemitraan strategis global — memberikan nilai dan kualitas terbaik bagi konsumen dan investor di seluruh dunia."
+            : "To deliver the highest quality by becoming a global leader in innovative and premium ready-to-eat seafood products, empowered by the richness of Indonesia’s marine resources, advanced cold chain technology, and strategic global partnerships—providing exceptional value and quality to consumers and investors worldwide."}
+        </blockquote>
+      </div>
+
+      {/* Misi */}
+      <div className="pl-6 text-left">
+        <h3 className="text-lg md:text-xl font-bold text-blue-900 mb-4">
+          {lang === "id" ? "Misi Kami" : "Our Mission"}
+        </h3>
+        <blockquote className="text-gray-600 italic leading-relaxed border-l-4 border-yellow-500 pl-4">
+          {lang === "id"
+            ? "Menyediakan produk perikanan siap saji yang berkualitas tinggi, segar, dan praktis melalui layanan unggul, distribusi FMCG yang luas, dan sistem logistik rantai dingin yang efisien untuk memuaskan pelanggan di seluruh dunia."
+            : "To provide high-quality, fresh, and convenient ready-to-eat seafood products through excellent service, extensive FMCG distribution, and an efficient cold chain logistics system to satisfy customers around the globe."}
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
       {/* Tim Kami */}
