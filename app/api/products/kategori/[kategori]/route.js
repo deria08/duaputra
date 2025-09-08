@@ -1,14 +1,17 @@
 import connectDB from "@/backend/config/db";
 import Product from "@/backend/models/Product";
-connectDB();
 
-export async function GET(req, { params }) {
+export async function GET(req, context) {
   try {
-    const { kategori } = params;
-    const allowedKategori = ["ikan", "valueadded", "cephalopoda", "udang"];
+    await connectDB();
+    const { kategori } = await context.params; // ⬅️ harus pakai await
 
+    const allowedKategori = ["ikan", "valueadded", "cephalopoda", "udang"];
     if (!allowedKategori.includes(kategori)) {
-      return new Response(JSON.stringify({ message: "Kategori tidak valid" }), { status: 400 });
+      return new Response(
+        JSON.stringify({ message: "Kategori tidak valid" }),
+        { status: 400 }
+      );
     }
 
     const products = await Product.find({ kategori }).sort({ createdAt: -1 });

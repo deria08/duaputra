@@ -17,25 +17,27 @@ export default function EditProductPage() {
   // const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
-    if (!id) return;
-    const fetchProduct = async () => {
-      try {
-        const res = await fetch(`/api/products/${id}`);
-        if (!res.ok) throw new Error("Data produk tidak ditemukan");
-        const data = await res.json();
-        setProduct(data);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    fetchProduct();
-  }, [id]);
+  if (!id) return;
+  const fetchProduct = async () => {
+    try {
+      const res = await fetch(`/api/products/${id}`);
+      if (!res.ok) throw new Error("Data produk tidak ditemukan");
+      const data = await res.json();
+
+      // ✅ mapping supaya selalu sesuai struktur state
       setProduct({
-      name: data.name || { id: "", en: "" },
-      description: data.description || { id: "", en: "" },
-      image: data.image || "",
-      kategori: data.kategori || "ikan",
-    });
+        name: data?.name || { id: "", en: "" },
+        description: data?.description || { id: "", en: "" },
+        image: data?.image || "",
+        kategori: data?.kategori || "ikan",
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  fetchProduct();
+}, [id]);
+
 
   const handleUpdate = async (e) => {
     e.preventDefault();
