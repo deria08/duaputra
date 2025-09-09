@@ -14,7 +14,7 @@ const Navbar = ({ submenu = [] }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [openMenu, setOpenMenu] = useState(null);
 
   const { lang, toggleLang } = useLanguage();
 

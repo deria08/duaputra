@@ -22,7 +22,7 @@ export default function PartnersClients() {
             {/* Manufacturing: gambar besar */}
             <div className="md:col-span-2 flex justify-center items-center">
               <img
-                src={assets.clients} // gambar besar gabungan logo
+                src={assets.duaputra} // gambar besar gabungan logo
                 alt="Manufacturing Partners"
                 className="w-full h-auto rounded-lg shadow-md"
               />
