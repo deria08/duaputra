@@ -232,12 +232,12 @@ const Navbar = ({ submenu = [] }) => {
 
                 {/* Submenu (muncul hanya saat diklik) */}
                 {menu.children && openMenu === menu.path && (
-                  <div className="flex flex-col gap-0 pl-4 border-l border-gray-200">
+                  <div className="ml-4 mt-1 flex flex-col gap-1">
                     {menu.children.map((child) => (
                       <Link
                         key={child.path}
                         href={child.path}
-                        className={`text-sm py-2 ${
+                        className={`text-sm pl-2 py-1 ${
                           pathname === child.path
                             ? "text-blue-600 font-semibold"
                             : "text-gray-600 hover:text-blue-600"
