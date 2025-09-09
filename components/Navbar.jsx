@@ -46,9 +46,11 @@ const Navbar = ({ submenu = [] }) => {
       children: [
       { name: lang === "id" ? "Perjalanan Kami" : "Our Journey", path: "/about-us/journey" },
       { name: lang === "id" ? "Tentang Kami" : "About us", path: "/about-us" },
-      { name: lang === "id" ? "Visi Misi" : "Vision Mission", path: "/about-us/vision-mission" },
-      { name: lang === "id" ? "Mitra" : "Partners", path: "/partners" },
+      // { name: lang === "id" ? "Visi Misi" : "Vision Mission", path: "/about-us/vision-mission" },
+      { name: lang === "id" ? "Mitra" : "Partners", path: "/about-us/partners" },
       { name: lang === "id" ? "Sertifikasi" : "Certification", path: "/about-us/certificate" },
+      { name: lang === "id" ? "Fasilitas" : "Facilities", path: "/about-us/facilities" },
+      
     ],
      },
     { name: lang === "id" ? "Berita" : "News", path: "/berita-list" },

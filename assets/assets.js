@@ -28,7 +28,43 @@ import ProductHead from './product_head.png'
 import logoteks from './logoteks.png'
 import logoteks1 from './logoteks1.png'
 import clients from './clients.png'
+import fasilitas from './fasilitas.png'
+import fasilitas1 from './fasilitas1.png'
+import fasilitas2 from './fasilitas2.png'
+import fasilitas3 from './fasilitas3.png'
+import fasilitas4 from './fasilitas4.png'
+import fasilitas5 from './fasilitas5.png'
+import techno from './techno.png'
+import techno1 from './techno1.png'
+import techno2 from './techno2.png'
+import techno3 from './techno3.png'
+import techno4 from './techno4.png'
+import coldstor from './coldstor.png'
+import coldstor1 from './coldstor1.png'
+import coldstor2 from './coldstor2.png'
+import logistic from './logistic.png'
+import logistic1 from './logistic1.png'
+import logistic2 from './logistic2.png'
+import logistic3 from './logistic3.png'
 export const assets = {
+  coldstor,
+  coldstor1,
+  coldstor2,
+  logistic,
+  logistic1,
+  logistic2,
+  logistic3,
+  techno,
+  techno1,
+  techno2,
+  techno3,
+  techno4,
+  fasilitas,
+  fasilitas1,
+  fasilitas2,
+  fasilitas3,
+  fasilitas4,
+  fasilitas5,
   clients,
   logoteks1,
   logoteks,
