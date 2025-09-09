@@ -27,7 +27,9 @@ import corporateS from './corporate_secretary.png'
 import ProductHead from './product_head.png'
 import logoteks from './logoteks.png'
 import logoteks1 from './logoteks1.png'
+import clients from './clients.png'
 export const assets = {
+  clients,
   logoteks1,
   logoteks,
   logo,

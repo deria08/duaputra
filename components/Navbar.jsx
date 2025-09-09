@@ -169,48 +169,84 @@ const Navbar = ({ submenu = [] }) => {
         </div>
 
         {/* Menu Mobile */}
-        {isOpen && (
-          <div className="md:hidden bg-white shadow-md border-t">
-            <div className="flex gap-2 p-3 border-b">
-              <button
-                onClick={() => toggleLang("id")}
-                className={`px-3 py-1 text-sm rounded ${
-                  lang === "id"
-                    ? "bg-blue-600 text-white"
-                    : "bg-gray-200 text-gray-700"
-                }`}
-              >
-                ID
-              </button>
-              <button
-                onClick={() => toggleLang("en")}
-                className={`px-3 py-1 text-sm rounded ${
-                  lang === "en"
-                    ? "bg-blue-600 text-white"
-                    : "bg-gray-200 text-gray-700"
-                }`}
-              >
-                EN
-              </button>
-            </div>
-            <div className="flex flex-col p-4 gap-3">
-              {mainMenus.map((menu) => (
+        {/* Menu Mobile */}
+{isOpen && (
+  <div className="md:hidden bg-white shadow-md border-t">
+    {/* Tombol Bahasa */}
+    <div className="flex gap-2 p-3 border-b">
+      <button
+        onClick={() => toggleLang("id")}
+        className={`px-3 py-1 text-sm rounded ${
+          lang === "id"
+            ? "bg-blue-600 text-white"
+            : "bg-gray-200 text-gray-700"
+        }`}
+      >
+        ID
+      </button>
+      <button
+        onClick={() => toggleLang("en")}
+        className={`px-3 py-1 text-sm rounded ${
+          lang === "en"
+            ? "bg-blue-600 text-white"
+            : "bg-gray-200 text-gray-700"
+        }`}
+      >
+        EN
+      </button>
+    </div>
+
+    {/* Menu List */}
+    <div className="flex flex-col p-4 gap-2">
+      {mainMenus.map((menu) => (
+        <div key={menu.path} className="flex flex-col">
+          {/* Item utama */}
+          <button
+            onClick={() => {
+              if (!menu.children) {
+                setIsOpen(false);
+              }
+            }}
+            className={`flex justify-between items-center text-left font-heading text-sm py-2 ${
+              pathname === menu.path
+                ? "text-blue-600 font-semibold"
+                : "text-gray-800"
+            }`}
+          >
+            <Link href={menu.path} onClick={() => setIsOpen(false)}>
+              {menu.name}
+            </Link>
+
+            {/* Panah kalau ada submenu */}
+            {menu.children && (
+              <span className="ml-2">▼</span>
+            )}
+          </button>
+
+          {/* Submenu (accordion) */}
+          {menu.children && (
+            <div className="ml-4 mt-1 flex flex-col gap-1">
+              {menu.children.map((child) => (
                 <Link
-                  key={menu.path}
-                  href={menu.path}
-                  className={`font-heading text-sm ${
-                    pathname === menu.path
+                  key={child.path}
+                  href={child.path}
+                  className={`text-sm pl-2 py-1 ${
+                    pathname === child.path
                       ? "text-blue-600 font-semibold"
-                      : "text-gray-800"
+                      : "text-gray-600 hover:text-blue-600"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
-                  {menu.name}
+                  {child.name}
                 </Link>
               ))}
             </div>
-          </div>
-        )}
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+)}
       </header>
       {/* Submenu (dinamis dari props) */}
       {submenu.length > 0 && (
