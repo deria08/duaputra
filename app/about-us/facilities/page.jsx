@@ -17,9 +17,9 @@ export default function FacilitiesTechnologyPage() {
           {/* Header Facilities */}
           <div className="mb-12">
             <h1 className="text-2xl md:text-3xl text-blue-900 leading-snug uppercase">
-              Facilities & &nbsp;
+              {lang==="id"?"Fasilitas &":"Facilities &"} 
               <br />
-              <span className="font-bold">Infrastructure</span>
+              <span className="font-bold">{lang==="id"?"Infrastruktur":"Infrastructure"}</span>
             </h1>
           </div>
 
@@ -165,8 +165,8 @@ export default function FacilitiesTechnologyPage() {
           {/* COLD STORAGE */}
           <section>
             <div className="mb-12">
-              <h1 className="text-2xl md:text-3xl font-bold text-blue-900 leading-snug">
-                Cold Storage <span className="uppercase">Capacity</span>
+              <h1 className="text-2xl md:text-3xl uppercase text-blue-900 leading-snug">
+                Cold Storage <span className="font-bold">Capacity</span>
               </h1>
             </div>
 
