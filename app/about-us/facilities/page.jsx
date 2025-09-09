@@ -12,8 +12,8 @@ export default function FacilitiesTechnologyPage() {
   return (
     <>
       <Navbar />
-      <div className="bg-white text-gray-800 min-h-screen pt-40">
-        <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="bg-white text-gray min-h-screen pt-40 pb-16 px-4 sm:px-8">
+        <div className="max-w-6xl mx-auto space-y-16">
           {/* Header Facilities */}
           <div className="mb-12">
             <h1 className="text-2xl md:text-3xl text-blue-900 leading-snug uppercase">
@@ -28,7 +28,7 @@ export default function FacilitiesTechnologyPage() {
             <h2 className="text-lg md:text-xl uppercase text-blue-900 mb-4">
               Processing <span className="font-bold">Plant</span>
             </h2>
-            <p className="text-sm md:text-base text-gray-700 leading-relaxed max-w-3xl">
+            <p className="text-sm md:text-base text-gray-700 leading-relaxed mb:6">
               {lang === "id"
             ? "PT. Dua Putra Utama Makmur Tbk (DPUM) mengoperasikan fasilitas pemrosesan modern yang dirancang untuk menangani berbagai produk makanan laut, termasuk udang, cumi-cumi, gurita, dan ikan. Pabrik-pabrik ini dilengkapi dengan mesin dan teknologi canggih yang meningkatkan efisiensi produksi dan kualitas produk:"
             : "PT. Dua Putra Utama Makmur Tbk (DPUM) operates modern processing facilities designed to handle a variety of seafood products, including shrimp, squid, octopus, and fish. These plants are equipped with advanced machinery and technology that improve production efficiency and product quality:"}
@@ -36,7 +36,7 @@ export default function FacilitiesTechnologyPage() {
           </div>
 
           {/* Facilities Images */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
             {[
               { src: assets.fasilitas, alt: "Seafood on conveyor belt in processing plant" },
               { src: assets.fasilitas1, alt: "Blue trays with seafood on conveyor belt" },
@@ -57,7 +57,7 @@ export default function FacilitiesTechnologyPage() {
           </div>
 
           {/* Facilities Text */}
-          <div className="max-w-3xl text-sm md:text-base text-gray-700 space-y-6 leading-relaxed mb-16">
+          <div className="text-sm md:text-base text-gray-700 space-y-6 leading-relaxed mb-16">
             <p>
               <strong>{lang=== "id"?"Pengolahan Makanan Laut Mentah:":"Raw Seafood Processing:"}</strong>
               {lang==="id"
@@ -85,7 +85,7 @@ export default function FacilitiesTechnologyPage() {
             <h2 className="text-lg md:text-xl uppercase text-blue-900 mb-4">
               Advanced <span className="font-bold">Technology & Equipment</span>
             </h2>
-            <p className="text-sm md:text-base text-gray-700 leading-relaxed max-w-3xl">
+            <p className="text-sm md:text-base text-gray-700 leading-relaxed">
               {lang==="id"
               ?"PT Dua Putra Utama Makmur Tbk (DPUM) telah berinvestasi besar dalam teknologi pemrosesan dan pembekuan canggih untuk memaksimalkan efisiensi dan memastikan konsistensi produk. Teknologi-teknologi utama meliputi:"
             :"PT. Dua Putra Utama Makmur Tbk (DPUM) has invested heavily in advanced processing and freezing technology to maximize efficiency and ensure product consistency. Key technologies include:"}
@@ -115,7 +115,7 @@ export default function FacilitiesTechnologyPage() {
             <h2 className="text-lg md:text-xl uppercase text-blue-900 mb-4">
               Water <span className="font-bold">Treatment & Waste Management</span>
             </h2>
-            <p className="text-sm md:text-base text-gray-700 leading-relaxed max-w-3xl mb-6">
+            <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-6">
               {lang==="id"
               ?"DPUM berkomitmen terhadap keberlanjutan lingkungan dan telah menerapkan sistem pengelolaan air dan limbah di fasilitasnya:"
               :"DPUM is committed to environmental sustainability and has implemented water and waste management systems at its facilities:"}
@@ -170,7 +170,7 @@ export default function FacilitiesTechnologyPage() {
               </h1>
             </div>
 
-            <p className="text-sm md:text-base text-gray-700 leading-relaxed max-w-3xl mb-6">
+            <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-6">
               {lang==="id"
               ?"Salah satu kekuatan utama PT. Dua Putra Utama Makmur Tbk (DPUM) adalah infrastruktur penyimpanan dinginnya yang luas, yang dirancang untuk menjaga kualitas dan kesegaran produk. Fasilitas penyimpanan dingin perusahaan berlokasi strategis di Pati dan Juwana, Jawa Tengah, dengan kapasitas gabungan sebesar 25.000 ton."
               :"One of PT. Dua Putra Utama Makmur Tbk (DPUM)'s core strengths is its extensive cold storage infrastructure, designed to maintain product quality and freshness. The company's cold storage facilities are located strategically in Pati and Juwana, Central Java, with a combined capacity of 25,000 tons."}
@@ -204,12 +204,12 @@ export default function FacilitiesTechnologyPage() {
               </div>
             </div>
 
-            <p className="text-sm md:text-base text-gray-700 leading-relaxed max-w-3xl mb-4">
+            <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-4">
               {lang==="id"
               ?"Fasilitas Pati merupakan pusat penyimpanan utama perusahaan, dengan kapasitas penyimpanan dingin sebesar 24.500 ton. Fasilitas ini dilengkapi dengan sistem refrigerasi modern, termasuk teknologi berbasis amonia, yang mempercepat waktu pembekuan sekaligus mengurangi biaya operasional."
               :"The Pati facility is the company's primary storage center, with a cold storage capacity of 24,500 tons. It is equipped with modern refrigeration systems, including ammonia-based technology, which speeds up freezing times while reducing operational costs."}
             </p>
-            <p className="text-sm md:text-base text-gray-700 leading-relaxed max-w-3xl mb-10">
+            <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-10">
               {lang==="id"
               ?"Logistik Terkendali Suhu: Fasilitas penyimpanan dingin DPUM merupakan bagian integral dari rantai pasokannya, memastikan produk makanan laut tetap berada pada suhu optimal selama pemrosesan, pengemasan, dan transportasi. Infrastruktur ini memungkinkan DPUM memenuhi standar internasional untuk keamanan dan kesegaran produk."
               :"Temperature-Controlled Logistics: DPUM's cold storage facilities are an integral part of its supply chain, ensuring that seafood products are kept at optimal temperatures during processing, packaging, and transportation. This infrastructure allows DPUM to meet international standards for product safety and freshness."}
@@ -219,7 +219,7 @@ export default function FacilitiesTechnologyPage() {
             <h3 className="text-lg md:text-xl font-semibold text-blue-900 mb-4 uppercase">
               Logistic
             </h3>
-            <p className="text-sm md:text-base text-gray-700 leading-relaxed max-w-3xl mb-6">
+            <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-6">
               {lang==="id"
               ?"Truk kontainer siap dikirim - Proses pemuatan ekspor di pelabuhan/kapal - Label pengiriman dengan negara tujuan."
               :"Container trucks ready for delivery - Export loading process at port/ship - Shipping labels with destination country."}

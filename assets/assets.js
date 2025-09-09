@@ -46,7 +46,23 @@ import logistic from './logistic.png'
 import logistic1 from './logistic1.png'
 import logistic2 from './logistic2.png'
 import logistic3 from './logistic3.png'
+import certificate from './certificate.png'
+import certificate1 from './certificate1.png'
+import certificate2 from './certificate2.png'
+import certificate3 from './certificate3.png'
+import certificate4 from './certificate4.png'
+import certificate5 from './certificate5.png'
+import certificate6 from './certificate6.png'
+import certificate7 from './certificate7.png'
 export const assets = {
+  certificate,
+  certificate1,
+  certificate2,
+  certificate3,
+  certificate4,
+  certificate5,
+  certificate6,
+  certificate7,
   coldstor,
   coldstor1,
   coldstor2,
