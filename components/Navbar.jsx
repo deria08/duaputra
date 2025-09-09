@@ -82,9 +82,10 @@ const Navbar = ({ submenu = [] }) => {
             <Image
               src={assets.logoteks}
               alt="logo"
-              width={240}
-              height={240}
-              className="object-contain"
+              width={200}
+              height={200}
+              className="object-contain w-32 sm:w-40 md:w-48 lg:w-60 h-auto"
+              priority
             />
             {/* <span
               className={`font-heading font-semibold text-sm md:text-base tracking-wide ${logoTextClass}`}
