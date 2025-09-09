@@ -21,7 +21,7 @@ export default function PartnersClients() {
 
           <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* Gambar */}
-          <div className="relative w-full h-70 md:h-[650px] flex justify-center">
+          <div className="relative w-full aspect-[4/3] md:h-[650px] flex justify-center">
             <Image
               src={assets.clients}
               alt="Manufacturing Partners"
@@ -29,6 +29,7 @@ export default function PartnersClients() {
               className="object-contain rounded-lg shadow-md"
             />
           </div>
+
 
           {/* Cold Storage + Deskripsi */}
           <div>
