@@ -140,26 +140,25 @@ const Navbar = ({ submenu = [] }) => {
               {menu.name}
             </Link>
 
-            {/* Submenu (muncul hanya saat diklik) */}
-            {menu.children && openMenu === menu.path && (
-              <div className="ml-4 mt-1 flex flex-col gap-1">
+            {/* Dropdown */}
+            {menu.children && (
+              <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-200">
                 {menu.children.map((child) => (
                   <Link
                     key={child.path}
                     href={child.path}
-                    className={`text-sm pl-2 py-1 ${
+                    className={`block px-4 py-2 text-sm transition-colors
+                    ${
                       pathname === child.path
-                        ? "text-blue-600 font-semibold"
-                        : "text-gray-600 hover:text-blue-600"
+                        ? "text-yellow-400 font-semibold"
+                        : "text-gray-700 hover:bg-gray-100 hover:text-[#1E3A8A]"
                     }`}
-                    onClick={() => setIsOpen(false)}
                   >
                     {child.name}
                   </Link>
                 ))}
               </div>
             )}
-
           </div>
         ))}
       </nav>
