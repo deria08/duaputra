@@ -206,40 +206,55 @@ const Navbar = ({ submenu = [] }) => {
                       : "text-gray-800"
                   }`}
                 >
-                  <Link href={menu.path} onClick={() => !menu.children && setIsOpen(false)}>
+                  <Link
+                    href={menu.path}
+                    onClick={() => !menu.children && setIsOpen(false)}
+                    className="flex-1"
+                  >
                     {menu.name}
                   </Link>
 
                   {/* Panah kalau ada submenu */}
                   {menu.children && (
-                    <span className={`ml-2 transform transition-transform ${openMenu === menu.path ? "rotate-180" : ""}`}>
+                    <span
+                      className={`ml-2 transform transition-transform ${
+                        openMenu === menu.path ? "rotate-180" : ""
+                      }`}
+                    >
                       ▼
                     </span>
                   )}
                 </button>
 
-                {/* Submenu (muncul hanya saat diklik) */}
-                {menu.children && openMenu === menu.path && (
-                  <div className="ml-4 mt-1 flex flex-col gap-1">
-                    {menu.children.map((child) => (
-                      <Link
-                        key={child.path}
-                        href={child.path}
-                        className={`text-sm pl-2 py-1 ${
-                          pathname === child.path
-                            ? "text-blue-600 font-semibold"
-                            : "text-gray-600 hover:text-blue-600"
-                        }`}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {child.name}
-                      </Link>
-                    ))}
+                {/* Submenu (responsive, inline di bawah mainmenu) */}
+                {menu.children && (
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      openMenu === menu.path ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div className="flex flex-col gap-1 pl-4 border-l ml-2">
+                      {menu.children.map((child) => (
+                        <Link
+                          key={child.path}
+                          href={child.path}
+                          className={`text-sm py-1 ${
+                            pathname === child.path
+                              ? "text-blue-600 font-semibold"
+                              : "text-gray-600 hover:text-blue-600"
+                          }`}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
             ))}
           </div>
+
         </div>
       )}
       </header>
