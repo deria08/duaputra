@@ -18,24 +18,25 @@ export async function GET(req, context) {
     let responseData;
 
     if (lang === "all") {
-      // ⬅️ kirim semua bahasa (untuk edit page)
+      // untuk edit page
       responseData = {
         _id: news._id,
         title: news.title,
         shortDesc: news.shortDesc,
         fullDesc: news.fullDesc,
         image: news.image,
-        date: news.createdAt,
+        date: news.date,       // ⬅️ pakai date dari form
+        createdAt: news.createdAt,
       };
     } else {
-      // ⬅️ kirim hanya sesuai bahasa (untuk public page)
+      // untuk public page
       responseData = {
         _id: news._id,
         title: news.title?.[lang] || news.title?.id,
         shortDesc: news.shortDesc?.[lang] || news.shortDesc?.id,
         fullDesc: news.fullDesc?.[lang] || news.fullDesc?.id,
         image: news.image,
-        date: news.createdAt,
+        date: news.date,       // ⬅️ pakai date dari form
       };
     }
 
@@ -49,7 +50,11 @@ export async function GET(req, context) {
 export async function PUT(req, context) {
   await connectDB();
   const body = await req.json();
-  const { id } = await context.params; // ⬅️
+  const { id } = await context.params;
+
+  if (body.date) {
+    body.date = new Date(body.date); // ⬅️ pastikan format Date
+  }
 
   const updated = await News.findByIdAndUpdate(id, body, {
     new: true,
@@ -62,10 +67,11 @@ export async function PUT(req, context) {
 
   return NextResponse.json(updated, { status: 200 });
 }
-// Delete News
+
+// DELETE news
 export async function DELETE(req, context) {
   await connectDB();
-  const { id } = await context.params; // ⬅️
+  const { id } = await context.params;
 
   const deleted = await News.findByIdAndDelete(id);
 
@@ -75,4 +81,3 @@ export async function DELETE(req, context) {
 
   return NextResponse.json({ message: "Deleted successfully" }, { status: 200 });
 }
-

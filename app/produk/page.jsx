@@ -34,7 +34,7 @@ export default function ProductPage() {
 
 
   const productSubmenu = [
-    { name: lang === "id" ? "Ikan" : "Fish", path: "#ikan" },
+    // { name: lang === "id" ? "Ikan" : "Fish", path: "#ikan" },
     { name: lang === "id" ? "Udang" : "Shrimp", path: "#udang" },
     { name: lang === "id" ? "Makanan Olahan" : "Processed Food", path: "#valueadded" },
     { name: lang === "id" ? "Cephalopoda" : "Cephalopods", path: "#cephalopoda" },
@@ -86,11 +86,11 @@ export default function ProductPage() {
       </section>
 
       {/* Render per kategori */}
-      <ProductSection
+      {/* <ProductSection
         id="ikan"
         title={lang === "id" ? "Ikan" : "Fish"}
         items={ikan}
-      />
+      /> */}
       <ProductSection
         id="udang"
         title={lang === "id" ? "Udang" : "Shrimp"}

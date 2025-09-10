@@ -15,8 +15,12 @@ const newsSchema = new mongoose.Schema(
       id: { type: String },
       en: { type: String },
     },
+    date: {
+      type: Date,
+      required: true, // wajib input dari form
+    },
   },
-  { timestamps: true }
+  { timestamps: true } // createdAt & updatedAt tetap ada untuk tracking
 );
 
 const News = mongoose.models.News || mongoose.model("News", newsSchema);

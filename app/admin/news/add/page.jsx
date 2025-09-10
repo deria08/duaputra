@@ -59,7 +59,7 @@ export default function AddNewsPage() {
         image,
         shortDesc: { id: shortId, en: shortEn },
         fullDesc: { id: fullId, en: fullEn },
-        date,
+        date: new Date(date),
       }),
     });
 
@@ -78,14 +78,11 @@ export default function AddNewsPage() {
         {/* Gambar */}
         {/* <input className="w-full border p-2 rounded" placeholder="URL Gambar" value={image} onChange={(e) => setImage(e.target.value)} /> */}
         <p>Masukkan Gambar</p>
-        <p>Masukkan Gambar</p>
         <input type="file" accept="image/*" onChange={onFileChange} />
         {uploading && <p>Mengunggah gambar...</p>}
         {image && (
           <img src={image} alt="Preview" className="mt-2 w-32 rounded shadow" />
         )}
-
-        {uploading && <p>Mengunggah file...</p>}
 
         {/* Deskripsi Singkat */}
         <input className="w-full border p-2 rounded" placeholder="Deskripsi Singkat (ID)" value={shortId} onChange={(e) => setShortId(e.target.value)} />
@@ -99,13 +96,6 @@ export default function AddNewsPage() {
 
         <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">Simpan Berita</button>
       </form>
-
-      {image && (
-        <div className="mt-4">
-          <p className="font-medium">Preview Gambar:</p>
-          <img src={image} alt="Preview" className="max-w-full mt-2 rounded" />
-        </div>
-      )}
     </div>
   );
 }

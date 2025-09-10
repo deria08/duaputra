@@ -2,14 +2,17 @@ import { NextResponse } from "next/server";
 import connectDB from "@/backend/config/db";
 import Product from "@/backend/models/Product";
 
-// GET products by ID
-export async function GET(req, { params }) {
+// GET product by ID
+export async function GET(req, context) {
   try {
     await connectDB();
-    const product = await Product.findById(params.id);
+    const { id } = await context.params; // ⬅️ pakai await
+    const product = await Product.findById(id);
+
     if (!product) {
       return NextResponse.json({ error: "Product not found" }, { status: 404 });
     }
+
     return NextResponse.json(product);
   } catch (err) {
     return NextResponse.json({ error: err.message }, { status: 500 });
@@ -17,11 +20,13 @@ export async function GET(req, { params }) {
 }
 
 // PUT update product
-export async function PUT(req, { params }) {
+export async function PUT(req, context) {
   try {
     await connectDB();
+    const { id } = await context.params; // ⬅️ pakai await
     const body = await req.json();
-    const updated = await Product.findByIdAndUpdate(params.id, body, {
+
+    const updated = await Product.findByIdAndUpdate(id, body, {
       new: true,
       runValidators: true,
     });
@@ -37,10 +42,11 @@ export async function PUT(req, { params }) {
 }
 
 // DELETE product
-export async function DELETE(req, { params }) {
+export async function DELETE(req, context) {
   try {
     await connectDB();
-    const deleted = await Product.findByIdAndDelete(params.id);
+    const { id } = await context.params; // ⬅️ pakai await
+    const deleted = await Product.findByIdAndDelete(id);
 
     if (!deleted) {
       return NextResponse.json({ message: "Produk tidak ditemukan" }, { status: 404 });
