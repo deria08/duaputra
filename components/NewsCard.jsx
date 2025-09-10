@@ -31,7 +31,7 @@ const NewsCard = ({ news }) => {
 
         <Link
           href={`/berita/${news._id}`}
-          className="mt-2 text-xs sm:text-sm font-medium text-blue-600 hover:underline"
+          className="mt-2 text-xs sm:text-sm font-med j8ibium text-blue-600 hover:underline"
         >
           {lang==="id"?"Selengkapnya ":"Read More "}→
         </Link>

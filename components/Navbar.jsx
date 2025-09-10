@@ -87,18 +87,6 @@ const Navbar = ({ submenu = [] }) => {
               className="object-contain w-32 sm:w-40 md:w-48 lg:w-60 h-auto"
               priority
             />
-            {/* <span
-              className={`font-heading font-semibold text-sm md:text-base tracking-wide ${logoTextClass}`}
-            >
-              PT Dua Putra Utama Makmur Tbk
-            </span> */}
-            {/* <Image
-              src={assets.logoteks1}
-              alt="logo"
-              width={200}
-              height={200}
-              className="object-contain"
-            /> */}
           </Link>
 
           {/* Menu Desktop */}

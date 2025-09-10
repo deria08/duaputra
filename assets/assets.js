@@ -54,7 +54,15 @@ import certificate4 from './certificate4.png'
 import certificate5 from './certificate5.png'
 import certificate6 from './certificate6.png'
 import certificate7 from './certificate7.png'
+import fish from './fish.png'
+import shrimp from './shrimp.png'
+import squid from './squid.png'
+import facility from './facility.png'
 export const assets = {
+  facility,
+  fish,
+  squid,
+  shrimp,
   certificate,
   certificate1,
   certificate2,

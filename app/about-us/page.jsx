@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import { useLanguage } from "@/context/AppContext";
+// import FloatingIcons from "@/components/FloatingIcons";
 
 export default function TentangKami() {
   const [timDewan, setTimDewan] = useState([]);
@@ -84,6 +85,7 @@ export default function TentangKami() {
 
        {/* Profil Perusahaan */}
       <section id="profil" className="max-w-5xl mx-auto px-6 py-16">
+        
         <h2 className="text-2xl font-bold mb-6 text-gray-800">
           {lang === "id" ? "Tentang Kami" : "About Us"}
         </h2>

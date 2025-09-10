@@ -12,7 +12,16 @@ export default function FacilitiesTechnologyPage() {
   return (
     <>
       <Navbar />
-      <div className="bg-white text-gray min-h-screen pt-40 pb-16 px-4 sm:px-8">
+      {/* Hero / gambar perusahaan */}
+      <section className="relative w-full h-[600px]">
+        <Image
+          src={assets.facility} // ganti dengan gambar Anda
+          alt="Gedung Perusahaan"
+          fill
+          className="object-cover"
+        />
+      </section>
+      <div className="bg-white text-gray min-h-screen pt-10 pb-16 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Header Facilities */}
           <div className="mb-12">
