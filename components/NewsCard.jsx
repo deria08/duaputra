@@ -1,9 +1,12 @@
 "use client";
 
+import { useLanguage } from "@/context/AppContext";
 import Image from "next/image";
 import Link from "next/link";
 
+
 const NewsCard = ({ news }) => {
+  const {lang} = useLanguage()
   return (
     <div className="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden">
       {/* Gambar */}
@@ -30,7 +33,7 @@ const NewsCard = ({ news }) => {
           href={`/berita/${news._id}`}
           className="mt-2 text-xs sm:text-sm font-medium text-blue-600 hover:underline"
         >
-          {`Selengkapnya →`}
+          {lang==="id"?"Selengkapnya ":"Read More "}→
         </Link>
       </div>
     </div>
