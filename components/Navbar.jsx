@@ -260,25 +260,27 @@ const Navbar = ({ submenu = [] }) => {
       </header>
       {/* Submenu (dinamis dari props) */}
       {submenu.length > 0 && (
-          <div
-            className={`fixed left-0 w-full border-b z-40 transition-all duration-300 ${
-              showNavbar ? "top-[92px]" : "top-0"
-            } ${isNavColored ? "bg-[#1E3A8A]" : "bg-transparent"}`}
-          >
-            <div className="max-w-7xl mx-auto flex gap-8 px-4 py-2 text-xs md:text-sm font-medium uppercase">
-              {submenu.map((sub) => (
-                <Link
-                  key={sub.path}
-                  href={sub.path}
-                  className={`font-heading transition-colors ${
-                    isNavColored ? "text-white hover:text-yellow-400" : "text-white hover:text-yellow-400"
-                  }`}
-                >
-                  {sub.name}
-                </Link>
-              ))}
-            </div>
+        <div
+          className={`fixed left-0 w-full border-b z-40 transition-all duration-300 ${
+            showNavbar ? "top-[92px]" : "top-0"
+          } ${isNavColored ? "bg-[#1E3A8A]" : "bg-transparent"}`}
+        >
+          <div className="max-w-7xl mx-auto flex gap-8 px-4 py-2 text-xs md:text-sm font-medium uppercase">
+            {submenu.map((sub) => (
+              <Link
+                key={sub.path}
+                href={sub.path}
+                className={`font-heading transition-colors ${
+                  isNavColored
+                    ? "text-white hover:text-yellow-400"
+                    : "text-white hover:text-yellow-400"
+                }`}
+              >
+                {sub.name}
+              </Link>
+            ))}
           </div>
+        </div>
       )}
     </div>
   );
