@@ -262,7 +262,7 @@ const Navbar = ({ submenu = [] }) => {
       {submenu.length > 0 && (
         <div
           className={`fixed left-0 w-full border-b z-40 transition-all duration-300 ${
-            showNavbar ? "top-full" : "top-0"
+            showNavbar ? "top-[92px]" : "top-0"
           } ${isNavColored ? "bg-[#1E3A8A]" : "bg-transparent"}`}
         >
           <div className="max-w-7xl mx-auto flex gap-8 px-4 py-2 text-xs md:text-sm font-medium uppercase">
