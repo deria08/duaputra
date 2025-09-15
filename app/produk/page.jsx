@@ -36,7 +36,7 @@ export default function ProductPage() {
   const productSubmenu = [
     // { name: lang === "id" ? "Ikan" : "Fish", path: "#ikan" },
     { name: lang === "id" ? "Udang" : "Shrimp", path: "#udang" },
-    { name: lang === "id" ? "Makanan Olahan" : "Processed Food", path: "#valueadded" },
+    { name: lang === "id" ? "Value Added" : "Value Added", path: "#valueadded" },
     { name: lang === "id" ? "Cephalopoda" : "Cephalopods", path: "#cephalopoda" },
   ];
 
@@ -98,7 +98,7 @@ export default function ProductPage() {
       />
       <ProductSection
         id="valueadded"
-        title={lang === "id" ? "Makanan Olahan" : "Processed Food"}
+        title={lang === "id" ? "Value Added" : "Value Added"}
         items={valueAdded}
       />
       <ProductSection
