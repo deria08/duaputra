@@ -37,10 +37,10 @@ export default function Footer() {
               <Link href="https://www.instagram.com/pt.duaputrautamamakmur.tbk" className="hover:underline">
                 Instagram
               </Link>
-              <Link href="#" className="hover:underline">
-                Twitter
+              <Link href="https://www.tiktok.com/@duaputrautamamakmur?_t=ZS-90BG771UDWT&_r=1" className="hover:underline">
+                Tiktok
               </Link>
-              <Link href="/kontak" className="hover:underline">
+              <Link href="https://www.facebook.com/share/1ExShz4MXk" className="hover:underline">
                 Facebook
               </Link>
             </div>
